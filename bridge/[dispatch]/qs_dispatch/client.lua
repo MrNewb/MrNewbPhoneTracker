@@ -1,4 +1,4 @@
-if Config.Alert.qs_Dispatch ~= true then return end
+if Config.Alert ~= "qs_Dispatch" then return print("qs_Dispatch SS Off") end
 
 function DispatchData(data)
 	if not data then return print("No data provided") end

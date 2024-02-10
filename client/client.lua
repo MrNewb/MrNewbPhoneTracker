@@ -6,7 +6,7 @@ RegisterNetEvent("MrNewbPhoneTracker:requestCoord", function()
 end)
 
 function ReturnedInput(data)
-	if not data.inputted1 then return print("No number provided") end
+	if not data.inputted1 then return end
 	TriggerServerEvent("MrNewbPhoneTracker:getCoord", data.inputted1)
 end
 

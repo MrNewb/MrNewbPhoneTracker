@@ -1,4 +1,4 @@
-if Config.Input.QbInput ~= true then return print("QbInput CS Off") end
+if Config.Input ~= "QbInput" then return print("QbInput SS Off") end
 
 function CreateInput(data)
 	local qbdata = exports['qb-input']:ShowInput({

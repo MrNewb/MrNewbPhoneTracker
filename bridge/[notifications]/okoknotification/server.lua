@@ -1,5 +1,5 @@
-if Config.Notify.OKNotify ~= true then return print("OKNotify Off SS") end
+if Config.Notify ~= "OKNotify" then return print("OKNotify SS Off") end
 
 function notifyPlayer(src, msg, status)
-	TriggerClientEvent('okokNotify:Alert', src, 'Notification', msg, 3000, status, false)
+	return TriggerClientEvent('okokNotify:Alert', src, 'Notification', msg, 3000, status, false)
 end

@@ -1,14 +1,14 @@
-if Config.Phone.QsPhone ~= true then return print("QsPhone SS Off") end
+if Config.Phone ~= "QsPhone" then return print("QsPhone SS Off") end
 
-local function getOwnerByPhoneNumber(phoneNumber)
-    local query = 'SELECT `owner` FROM `phone_backups` WHERE `phone` = ?'
-    local response = MySQL.query.await(query, {phoneNumber})
+local function getOwnerByPhoneNumber(phoneNumber)	
+	local response = MySQL.query.await('SELECT `owner` FROM `phone_backups` WHERE `phone` = ?;', { phoneNumber })
 
-    if response and #response > 0 then
-        return response[1].owner
-    end
+	if response and #response > 0 then 
+		return response[1].owner 
+	end
 
-    return nil
+	return nil
+
 end
 
 local function getPlayerDataByCitizenId(CitizenID)
@@ -27,5 +27,5 @@ end
 function getPlayerCoords(TargetSource)
 	local ped = GetPlayerPed(TargetSource)
 	local coords = GetEntityCoords(ped)
-	return { x = coords.x, y = coords.y, z = coords.z }
+	return coords
 end

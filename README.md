@@ -14,20 +14,20 @@ I have only tested this on QBX and it worked with the framework functions provid
 
 ## Compatibility
 
-- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, and qs-smartphonepro (at this time).
-- **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox (at this time).
+- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, and qs-smartphonepro.
+- **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox.
 
 
 ## NPWD Compatibility Notes
 
-- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality.
+- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality with this resource.
 
 ## QS Smart Phone Pro Compatibility Notes
 
 When integrating MrNewbPhoneTracker with the QS Phone, please consider the following:
 
 - **Creator Exports**: The creator does not offer exports like LB, which may affect compatibility with certain functions.
-- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality.
+- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality with this resource.
 - **Dissapointment**: This resource may have breaking updates on compatability at some point and the method ive used for queries is awful.
 
 ## Untested dispatch Compatibility Notes
@@ -47,9 +47,11 @@ Contributions to MrNewbPhoneTracker are welcome! If you have any suggestions, im
 
 ## Credits
 
-- **Testing on QS Phone**: Special thanks to OnlyCure for testing MrNewbPhoneTracker compatibility with the QS Phone. Your contributions are appreciated!
-- **Testing on QB Phone**: Special thanks to inightm4r3 for testing MrNewbPhoneTracker compatibility with the QB Phone. Your contributions are appreciated!
-- **Testing on LB Phone**: Special thanks to PriceAlbert for testing MrNewbPhoneTracker compatibility with the LB Phone. Your contributions are appreciated!
+- **Testing on QS Phone**: Thanks to OnlyCure for testing MrNewbPhoneTracker compatibility with the QS Phone.
+- **Testing on QB Phone**: Thanks to inightm4r3 for testing MrNewbPhoneTracker compatibility with the QB Phone.
+- **Testing on LB Phone**: Thanks to PriceAlbert for testing MrNewbPhoneTracker compatibility with the LB Phone.
+- **Better Bridge Methods**: Thanks to Crowley for giving me feedback on improving my bridge functions to return the events vs just passing the events.
+- **Better Config Method**: Thanks to Kody for giving me feedback on improving my bridge functions to pass a string vs all the tables in config.
 
 
 ## Item Configuration for Old-QBCore/QBX

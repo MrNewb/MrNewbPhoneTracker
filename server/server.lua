@@ -15,7 +15,9 @@ AddEventHandler("MrNewbPhoneTracker:getCoord", function(phoneNumber)
     TriggerClientEvent('MrNewbPhoneTracker:trackedvictim', TargetSource)
     TriggerClientEvent('MrNewbPhoneTracker:provideCoord', src, GetPlayerCoords)
     notifyPlayer(src, "Phone has been pinged for 30 seconds", "success")
-    logs(src, " | Has pinged a phone ")
+	if logs then
+		logs(src, " | Has pinged a phone ")
+	end
 end)
 
 QBCore.Functions.CreateUseableItem(Config.TrackerItem, function(source, item)
@@ -23,6 +25,6 @@ QBCore.Functions.CreateUseableItem(Config.TrackerItem, function(source, item)
     local Player = QBCore.Functions.GetPlayer(src)
     local JobName = Player.PlayerData.job.name
     if not Player then return end
-    if not JobName == Config.RequiredJob then return end
+    if not JobName == Config.RequiredJob then return notifyPlayer(src, "You dont know how to use this.", "error") end
     TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
 end)

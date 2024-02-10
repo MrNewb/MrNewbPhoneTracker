@@ -1,4 +1,4 @@
-if Config.Alert.PsDispatch ~= true then return end
+if Config.Alert ~= "PsDispatch" then return print("PsDispatch SS Off") end
 
 function DispatchData(data)
 	if not data then return print("No data provided") end

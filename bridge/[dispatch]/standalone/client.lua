@@ -1,4 +1,4 @@
-if Config.Alert.Standalone ~= true then return end
+if Config.Alert ~= "Standalone" then return print("Standalone SS Off") end
 
 function DispatchData(data)
 	if not data then return print("No data provided") end

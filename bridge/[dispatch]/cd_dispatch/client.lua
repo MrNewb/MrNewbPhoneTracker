@@ -1,4 +1,4 @@
-if Config.Alert.cd_Dispatch ~= true then return end
+if Config.Alert ~= "cd_Dispatch" then return print("cd_Dispatch CS Off") end
 
 function DispatchData(data)
 	if not data then return print("No data provided") end

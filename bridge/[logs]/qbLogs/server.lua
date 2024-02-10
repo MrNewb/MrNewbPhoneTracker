@@ -1,13 +1,5 @@
-if Config.Logs.QbLogs ~= true then return print("QbLogs Off SS") end
+if Config.Logs ~= "QbLogs" then return print("QbLogs SS Off") end
 
 function logs(src, msg)
-	if not Config.Logs.EnableLogs then 
-		return
-	end
-
-    if Config.Logs.QbLogs then
-        TriggerEvent('qb-log:server:CreateLog', GetCurrentResourceName(), GetCurrentResourceName(), 'red', msg)
-		return
-    end
-
+	return TriggerEvent('qb-log:server:CreateLog', GetCurrentResourceName(), GetCurrentResourceName(), 'red', msg)
 end

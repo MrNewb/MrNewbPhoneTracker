@@ -1,13 +1,5 @@
-if Config.Logs.OxLogs ~= true then return print("oxLogs Off SS") end
+if Config.Logs ~= "OxLogs" then return print("OxLogs SS Off") end
 
 function logs(src, msg)
-	if not Config.Logs.EnableLogs then 
-		return 
-	end
-	
-    if Config.Logs.OxLogs then
-        lib.logger(src, GetCurrentResourceName(), msg)
-        return
-    end
-
+	return lib.logger(src, GetCurrentResourceName(), msg)
 end

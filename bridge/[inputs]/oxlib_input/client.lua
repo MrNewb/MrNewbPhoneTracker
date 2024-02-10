@@ -1,4 +1,4 @@
-if Config.Input.OxInput ~= true then return end
+if Config.Input ~= "OxInput" then return print("OxInput CS Off") end
 
 function CreateInput(data)
 	local input = lib.inputDialog(data.title, {data.options1})
