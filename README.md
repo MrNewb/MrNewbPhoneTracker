@@ -22,7 +22,7 @@ I have only tested this on QBX and it worked with the framework functions provid
 
 - **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality.
 
-## QS Phone Compatibility Notes
+## QS Smart Phone Pro Compatibility Notes
 
 When integrating MrNewbPhoneTracker with the QS Phone, please consider the following:
 
