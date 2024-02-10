@@ -17,11 +17,6 @@ I have only tested this on QBX and it worked with the framework functions provid
 - **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, and qs-smartphonepro.
 - **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox.
 
-
-## NPWD Compatibility Notes
-
-- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality with this resource.
-
 ## QS Smart Phone Pro Compatibility Notes
 
 When integrating MrNewbPhoneTracker with the QS Phone, please consider the following:
