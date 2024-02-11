@@ -15,7 +15,7 @@ AddEventHandler("MrNewbPhoneTracker:getCoord", function(phoneNumber)
     TriggerClientEvent('MrNewbPhoneTracker:trackedvictim', TargetSource)
     TriggerClientEvent('MrNewbPhoneTracker:provideCoord', src, GetPlayerCoords)
     notifyPlayer(src, "Phone has been pinged for 30 seconds", "success")
-	if logs then
+	if Config.logs then
 		logs(src, " | Has pinged a phone ")
 	end
 end)
