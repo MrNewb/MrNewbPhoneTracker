@@ -9,11 +9,11 @@ I have only tested this on QBX and it worked with the framework functions provid
 - **Tracker Item**: The resource introduces an item called "tracker" that allows users to search and ping a number for its current location.
 - **Job Locking**: The tracker item is job-locked and configurable according to your server's needs.
 - **Community Contribution**: Created as a free alternative, MrNewbPhoneTrackers aims to be a community contribution, offering simplicity and ease of use.
-- **Tested Integration**: Compatibility has been tested with qb-phone, lb-phone, and npwd, with additional compatibility for qs phone although optimizations for the latter could be improved.
+- **Tested Integration**: Compatibility has been tested with qb-phone, lb-phone,  and npwd, with additional compatibility for qs phone although optimizations for the latter could be improved.
 
 ## Compatibility
 
-- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, and qs-smartphonepro.
+- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, okok-phone, and qs-smartphonepro.
 - **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox.
 
 ## QS Smart Phone Pro Compatibility Notes
