@@ -12,7 +12,7 @@ I have only tested this on QBX and it worked with the framework functions provid
 
 ## Compatibility
 
-- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, yflip, okok-phone, old qs-phone and qs-smartphonepro.
+- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, yflip, RoadPhone, okok-phone, old qs-phone and qs-smartphonepro.
 
 - **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox.
 
@@ -37,6 +37,8 @@ When integrating MrNewbPhoneTracker with the Yflip Phone, please consider the fo
 - **yflip phone**: Completely untested
 
 - **gks-phone**: Completely untested
+
+- **RoadPhone**: Completely untested
 
 ## Untested dispatch Compatibility Notes
 

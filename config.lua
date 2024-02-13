@@ -4,6 +4,6 @@ Config = {
 	Logs = "QbLogs",											-- set this to the name of the method, pass as string. options are "QbLogs","OxLogs", set to false to disable
 	Notify = "OxNotify",										-- set this to the name of the method, pass as string. options are "OxNotify","QBNotify","OKNotify","SDNotify"
 	Input = "OxInput",											-- set this to the name of the method, pass as string. options are "OxInput","QbInput"
-	Phone = "NPWD",												-- set this to the name of the method, pass as string. options are "NPWD","lbphone","OldQsPhone","NewQsPhone","QbPhone","yflip", "gks","okok"
+	Phone = "NPWD",												-- set this to the name of the method, pass as string. options are "NPWD","lbphone","OldQsPhone","NewQsPhone","QbPhone","yflip", "RoadPhone", "gks","okok"
 	Alert = "PsDispatch",										-- set this to the name of the method, pass as string. options are "PsDispatch","Standalone","cd_Dispatch","qs_Dispatch"
 }
