@@ -13,7 +13,7 @@ I have only tested this on QBX and it worked with the framework functions provid
 
 ## Compatibility
 
-- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, okok-phone, and qs-smartphonepro.
+- **phones**: MrNewbPhoneTrackers is compatible qb-phone/renewed, npwd, lb-phone, gks-phone, okok-phone, qs-smartphone(the old one), and qs-smartphonepro.
 - **frameworks**: MrNewbPhoneTrackers is compatible qb-core and qbox.
 
 ## QS Smart Phone Pro Compatibility Notes
@@ -21,8 +21,7 @@ I have only tested this on QBX and it worked with the framework functions provid
 When integrating MrNewbPhoneTracker with the QS Phone, please consider the following:
 
 - **Creator Exports**: The creator does not offer exports like LB, which may affect compatibility with certain functions.
-- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for any functionality with this resource.
-- **Dissapointment**: This resource may have breaking updates on compatability at some point and the method ive used for queries is awful.
+- **Framework Functions**: This resource does not fully leverage QB's framework functions, requiring additional queries for functionality with this resource.
 
 ## Untested dispatch Compatibility Notes
 
