@@ -90,6 +90,12 @@ Contributions to MrNewbPhoneTracker are welcome! If you have any suggestions, im
 	},
 
 ```
+
+## Acknowledgments
+
+Special thanks to Decay Studios for creating the inventory icons used in this release. You can find them on Discord [here](https://discord.gg/yDXZwZPjdN).
+[![Decay Studios](https://i.imgur.com/a6n1J4u.png)]([https://i.imgur.com/a6n1J4u.png](https://i.imgur.com/a6n1J4u.png))
+
 ## Resource support
 
 - **Discord**: I threw up a bland discord to kinda aim for ideas on future releases, mainly just qol stuff and requests that sound fun. Open to collaborations with anyone.
