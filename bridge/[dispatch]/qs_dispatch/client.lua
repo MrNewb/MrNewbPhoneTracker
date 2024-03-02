@@ -1,4 +1,5 @@
-if Config.Alert ~= "qs_Dispatch" then return print("qs_Dispatch SS Off") end
+if Config.Alert ~= "qs_Dispatch" then return end
+if Config.Debug then print("Alert Set To ", Config.Alert) end
 
 function DispatchData(data)
 	if not data then return print("No data provided") end
@@ -17,7 +18,7 @@ function DispatchData(data)
 			colour = data.color or 1,
 			flashes = data.flashes or true,
 			text = data.message,
-			time = (30 * 1000),     --20 secs
+			time = (30 * 1000),
 		}
 	})
 end

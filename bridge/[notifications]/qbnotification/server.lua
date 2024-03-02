@@ -1,5 +1,6 @@
-if not Config.Notify == "QBNotify" then return print("QBNotify SS Off") end
+if Config.Notify ~= "qb" then return end
+if Config.Debug then print("Notify Set To ", Config.Notify) end
 
-function notifyPlayer(src, msg, status)
+function NotifyPlayer(src, msg, status)
 	return TriggerClientEvent('QBCore:Notify', src, msg, status)
 end

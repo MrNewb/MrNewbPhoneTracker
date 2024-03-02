@@ -1,15 +1,18 @@
-if Config.Phone ~= "OldQsPhone" then return print("OldQsPhone SS Off") end
+if Config.Phone ~= "OldQsPhone" then return end
+if Config.Debug then print("Phone Set To ", Config.Phone) end
 
-function getPlayerCoords(TargetSource)
+function GetPlayerCoords(TargetSource)
 	if not TargetSource then return nil end
     local TargetPed = GetPlayerPed(TargetSource)
     local coords = GetEntityCoords(TargetPed)
+    if Config.Debug then print("TargetSource",TargetSource) end
     return coords
 end
 
-function getPlayerSource(phoneNumber)
+function GetPlayerSource(phoneNumber)
     if not phoneNumber then return nil end
-	local TargetSource = QBCore.Functions.GetPlayerByPhone(phoneNumber)
+	local TargetSource = GetPlayerByPhoneNumber(phoneNumber)
+    if Config.Debug then print("TargetSource",TargetSource) end
 	if not TargetSource then return nil end
-	return TargetSource.PlayerData.source
+	return TargetSource
 end

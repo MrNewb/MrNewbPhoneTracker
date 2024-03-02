@@ -1,5 +1,6 @@
-if Config.Notify ~= "OKNotify" then return print("OKNotify CS Off") end
+if Config.Notify ~= "ok" then return end
+if Config.Debug then print("Notify Set To ", Config.Notify) end
 
-function notifyPlayer(msg, status)
+function NotifyPlayer(msg, status)
 	return exports['okokNotify']:Alert('Notification', msg, 10000, status, false)
 end

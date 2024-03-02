@@ -27,7 +27,7 @@ RegisterNetEvent('MrNewbPhoneTracker:provideCoord', function(coords)
 end)
 
 RegisterNetEvent('MrNewbPhoneTracker:trackedvictim', function()
-	local ped = (cache.ped or PlayerPedId())
+	local ped = PlayerPedId()
 	local pedcoord = GetEntityCoords(ped)
 	PlaySoundFromCoord(-1, "Drill_Pin_Break", pedcoord.x,pedcoord.y,pedcoord.z, "DLC_HEIST_FLEECA_SOUNDSET", true, 5, false)
 	Wait(3000)

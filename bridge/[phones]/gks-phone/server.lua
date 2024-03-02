@@ -1,6 +1,7 @@
-if Config.Phone ~= "gks" then return print("gks SS Off") end
+if Config.Phone ~= "gks" then return end
+if Config.Debug then print("Phone Set To ", Config.Phone) end
 
-function getPlayerCoords(TargetSource)
+function GetPlayerCoords(TargetSource)
     if not TargetSource then return nil end
 
     local TargetPed = GetPlayerPed(TargetSource)
@@ -8,7 +9,7 @@ function getPlayerCoords(TargetSource)
     return coords
 end
 
-function getPlayerSource(phoneNumber)
+function GetPlayerSource(phoneNumber)
 	if not phoneNumber then return nil end
     local TargetSource = exports["gksphone"]:GetSourceByPhone(phoneNumber)
     if not TargetSource then return nil end

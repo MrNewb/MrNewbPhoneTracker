@@ -1,5 +1,6 @@
-if Config.Notify ~= "SDNotify" then return print("SDNotify SS Off") end
+if Config.Notify ~= "sd" then return end
+if Config.Debug then print("Notify Set To ", Config.Notify) end
 
-function notifyPlayer(src, msg, status)
+function NotifyPlayer(src, msg, status)
 	return TriggerClientEvent('sd-notify:Notify', src, "Notification", msg, 3000, status, 'top-right', false, false)
 end
