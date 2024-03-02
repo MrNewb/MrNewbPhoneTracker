@@ -11,6 +11,7 @@ end
 
 function GetPlayerByPhoneNumber(phoneNumber)
     local Player = QBCore.Functions.GetPlayerByPhone(phoneNumber)
+	if not Player then return nil end
     return Player.PlayerData.source
 end
 
@@ -29,3 +30,11 @@ QBCore.Functions.CreateUseableItem(Config.TrackerItem, function(source, item)
     if not JobName == Config.RequiredJob then return NotifyPlayer(src, "You dont know how to use this.", "error") end
     TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
 end)
+
+--[[
+-- debugging command if needed
+RegisterCommand("ping", function(source, args, rawCommand)
+    local src = source
+    TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
+end, false)
+--]]

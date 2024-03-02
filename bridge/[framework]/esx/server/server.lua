@@ -8,7 +8,6 @@ local function findPlayerIdentifier(phoneNumber)
     return query
 end
 
-
 function GetPlayerByPhoneNumber(phoneNumber)
     local identifier = findPlayerIdentifier(phoneNumber)
     if not identifier then return nil end
@@ -36,8 +35,9 @@ ESX.RegisterUsableItem(Config.TrackerItem, function(source)
     if not JobName == Config.RequiredJob then return NotifyPlayer(src, "You dont know how to use this.", "error") end
 	TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
 end)
-
+--[[
+-- debugging command if needed
 RegisterCommand("ping", function(source, args, rawCommand)
     local src = source
     TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
-end, false)
+end, false)--]]
