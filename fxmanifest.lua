@@ -4,6 +4,7 @@ lua54 'yes'
 use_fxv2_oal 'yes'
 name "MrNewbPhoneTracker"
 author "MrNewb"
+version '2.0.0'
 
 shared_scripts {
 	'@ox_lib/init.lua', --- comment this out if you dont for some reason use it?
