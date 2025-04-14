@@ -1,16 +1,15 @@
-if Config.Phone ~= "NPWD" then return end
-if Config.Debug then print("Phone Set To ", Config.Phone) end
+if GetResourceState('NPWD') ~= 'started' then return end
 
-function GetPlayerCoords(TargetSource)
-	if not TargetSource then return nil end
-    local TargetPed = GetPlayerPed(TargetSource)
-    local coords = GetEntityCoords(TargetPed)
-    return coords
-end
-
+--Untested code, please test before using in production.
 function GetPlayerSource(phoneNumber)
-    if not phoneNumber then return nil end
-	local TargetSource = GetPlayerByPhoneNumber(phoneNumber)
-	if not TargetSource then return nil end
-	return TargetSource
+	if not phoneNumber then return nil end
+    local players = Bridge.Framework.GetPlayers()
+    for _, playerID in pairs(players) do
+        local phoneData = exports.npwd.getPlayerData({ source = playerID })
+        local meh = phoneData.phoneNumber
+        if meh == phoneNumber then
+            return playerID
+        end
+    end
+	return nil
 end

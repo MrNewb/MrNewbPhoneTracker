@@ -1,18 +1,13 @@
-if Config.Phone ~= "OldQsPhone" then return end
-if Config.Debug then print("Phone Set To ", Config.Phone) end
-
-function GetPlayerCoords(TargetSource)
-	if not TargetSource then return nil end
-    local TargetPed = GetPlayerPed(TargetSource)
-    local coords = GetEntityCoords(TargetPed)
-    if Config.Debug then print("TargetSource",TargetSource) end
-    return coords
-end
+if GetResourceState('qs-smartphone') ~= 'started' then return end
 
 function GetPlayerSource(phoneNumber)
     if not phoneNumber then return nil end
-	local TargetSource = GetPlayerByPhoneNumber(phoneNumber)
-    if Config.Debug then print("TargetSource",TargetSource) end
-	if not TargetSource then return nil end
-	return TargetSource
+    local players = Bridge.Framework.GetPlayers()
+    for _, v in pairs(players) do
+        local playerPhoneNumber = exports['qs-base']:GetPlayerPhone(v)
+        if playerPhoneNumber == phoneNumber then
+            return v
+        end
+    end
+	return nil
 end

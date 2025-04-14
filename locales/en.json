@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Ping Phone Tower For Phone",
+        "NoInput": "No input provided.",
+        "Placeholder": "Phone Number",
+        "Description": "Phone Number Description",
+        "Submit": "Submit",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "You dont know how to use this.",
+        "Unabletolocate": "Unable to locate phone or it may be offline."
+    },
+    "Dispatch": {
+        "Message": "Phone Tracker Located Phone Number.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

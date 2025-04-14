@@ -1,13 +1,4 @@
-if Config.Phone ~= "okok" then return end
-if Config.Debug then print("Phone Set To ", Config.Phone) end
-
-function GetPlayerCoords(TargetSource)
-    if not TargetSource then return nil end
-
-    local TargetPed = GetPlayerPed(TargetSource)
-    local coords = GetEntityCoords(TargetPed)
-    return coords
-end
+if GetResourceState('okokPhone') ~= 'started' then return end
 
 function GetPlayerSource(phoneNumber)
 	if not phoneNumber then return nil end
