@@ -21,7 +21,7 @@ if IsDuplicityVersion() then
             DebugInfo("RegisterUsableItems")
             local playerjobname, _, __, ___ = Bridge.Framework.GetPlayerJob(src)
             DebugInfo("Player Job Name: " .. playerjobname.." | Required Job: " .. Config.RequiredJob)
-            if playerjobname ~= Config.RequiredJob then return NotifyPlayer(src, locale("Restricted.JobLocked"), "error", 5000) end
+            if playerjobname ~= Config.RequiredJob then return NotifyPlayer(src, locales("Restricted.JobLocked"), "error", 5000) end
             TriggerClientEvent("MrNewbPhoneTracker:requestCoord", src)
         end)
     end
