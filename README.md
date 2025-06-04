@@ -2,7 +2,7 @@
 
 > **Professional FiveM Phone Tracking System** - Lightweight and configurable phone location tracker with comprehensive phone script compatibility and job-based access control.
 
-![GitHub Stars](https://img.shields.io/github/stars/MrNewb/MrNewbPhoneTracker?style=for-the-badge&color=FFD700) ![GitHub Downloads](https://img.shields.io/github/downloads/MrNewb/MrNewbPhoneTracker/total?style=for-the-badge&color=00FF00) ![License](https://img.shields.io/badge/License-FREE-brightgreen?style=for-the-badge) ![Framework](https://img.shields.io/badge/Framework-ESX%20%7C%20QBCore%20%7C%20Qbox-blue?style=for-the-badge) ![Phone Compatibility](https://img.shields.io/badge/Phone_Scripts-6%2B_Supported-orange?style=for-the-badge)
+![GitHub Stars](https://img.shields.io/github/stars/MrNewb/MrNewbPhoneTracker?style=for-the-badge&color=FFD700) ![GitHub Downloads](https://img.shields.io/github/downloads/MrNewb/MrNewbPhoneTracker/total?style=for-the-badge&color=00FF00) ![License](https://img.shields.io/badge/License-FREE-brightgreen?style=for-the-badge) ![Framework](https://img.shields.io/badge/Framework-ESX%20%7C%20QBCore%20%7C%20Qbox-blue?style=for-the-badge)
 
 [![Discord](https://img.shields.io/discord/1204398264812830720?label=Discord&logo=discord&color=7289DA&style=for-the-badge)](https://discord.gg/mrnewbscripts) [![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/R5R76BIM9) [![Documentation](https://img.shields.io/badge/Docs-GitBook-blue?style=for-the-badge&logo=gitbook)](https://mrnewbs-scrips.gitbook.io/guide)
 
