@@ -80,7 +80,7 @@ For detailed installation instructions, visit our complete documentation.
 ![Community Bridge](https://img.shields.io/badge/Requires-Community_Bridge-critical?style=for-the-badge&logo=bridge&logoColor=white)
 
 **Required Dependencies:**
-- **[Community Bridge](https://github.com/MrNewb/community_bridge)** - Essential bridge system for cross-framework compatibility and inventory integration
+- **[Community Bridge](https://github.com/TheOrderFivem/community_bridge/tree/main)** - Essential bridge system for cross-framework compatibility and inventory integration
 - **Framework** - ESX, QBCore, or Qbox/QBX (detected automatically via Community Bridge)
 - **Phone Script** - Any supported phone system (compatibility handled through Community Bridge)
 - **Inventory System** - Compatible with all inventory systems supported by Community Bridge
