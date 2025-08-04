@@ -10,11 +10,7 @@ function DebugInfo(message)
 end
 
 if IsDuplicityVersion() then
-    function NotifyPlayer(src, message, _type, time)
-        if not message or not _type then return end
-        DebugInfo("NotifyPlayer"..src.." | "..message.." | ".._type.." | "..time)
-        return Bridge.Notify.SendNotify(src, message, _type, time)
-    end
+    NotifyPlayer = Bridge.Notify.SendNotify
 
     function RegisterUsableItems()
         Bridge.Framework.RegisterUsableItem(Config.TrackerItem, function(src, itemData)
@@ -33,11 +29,8 @@ if IsDuplicityVersion() then
     AddEventHandler('onResourceStart', function(resource)
         if resource ~= GetCurrentResourceName() then return end
         RegisterUsableItems()
-        Bridge.Version.VersionChecker("MrNewbScripts/MrNewbPhoneTracker", false)
+        Bridge.Version.VersionChecker("MrNewb/patchnotes", false, true, "MrNewbPhoneTracker", "MrNewb/MrNewbPhoneTracker")
     end)
 else
-    function NotifyPlayer(message, _type, time)
-        if not message or not _type then return end
-        return Bridge.Notify.SendNotify(message, _type, time)
-    end
+    NotifyPlayer = Bridge.Notify.SendNotify
 end
