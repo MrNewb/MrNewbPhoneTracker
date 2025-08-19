@@ -4,7 +4,7 @@ lua54 'yes'
 use_fxv2_oal 'yes'
 name "MrNewbPhoneTracker"
 author "MrNewb"
-version '2.0.3'
+version '2.0.4'
 description "Phone Tracker for FiveM, this allows for tracking a player by the phone number."
 
 shared_scripts {

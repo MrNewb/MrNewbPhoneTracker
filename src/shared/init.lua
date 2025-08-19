@@ -29,7 +29,7 @@ if IsDuplicityVersion() then
     AddEventHandler('onResourceStart', function(resource)
         if resource ~= GetCurrentResourceName() then return end
         RegisterUsableItems()
-        Bridge.Version.VersionChecker("MrNewb/patchnotes", false, true, "MrNewbPhoneTracker", "MrNewb/MrNewbPhoneTracker")
+        Bridge.Version.AdvancedVersionChecker("MrNewb/patchnotes", resource)
     end)
 else
     NotifyPlayer = Bridge.Notify.SendNotify
