@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Localiser la tour de téléphone pour le téléphone",
+        "NoInput": "Aucune entrée fournie.",
+        "Placeholder": "Numéro de téléphone",
+        "Description": "Description du numéro de téléphone",
+        "Submit": "Soumettre",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Vous ne savez pas comment utiliser ceci.",
+        "Unabletolocate": "Impossible de localiser le téléphone ou il peut être hors ligne."
+    },
+    "Dispatch": {
+        "Message": "Le traceur de téléphone a localisé le numéro de téléphone.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

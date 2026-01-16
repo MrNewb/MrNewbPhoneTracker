@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Ping telefonní věž pro telefon",
+        "NoInput": "Nebyl zadán žádný vstup.",
+        "Placeholder": "Telefonní číslo",
+        "Description": "Popis telefonního čísla",
+        "Submit": "Odeslat",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Nevíš, jak to používat.",
+        "Unabletolocate": "Nelze najít telefon nebo může být offline."
+    },
+    "Dispatch": {
+        "Message": "Sledování telefonu našlo telefonní číslo.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

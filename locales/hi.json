@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "फोन के लिए फोन टॉवर पिंग करें",
+        "NoInput": "कोई इनपुट प्रदान नहीं किया गया।",
+        "Placeholder": "फोन नंबर",
+        "Description": "फोन नंबर विवरण",
+        "Submit": "जमा करें",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "आप नहीं जानते कि इसका उपयोग कैसे करना है।",
+        "Unabletolocate": "फोन का पता लगाने में असमर्थ या यह ऑफ़लाइन हो सकता है।"
+    },
+    "Dispatch": {
+        "Message": "फोन ट्रैकर ने फोन नंबर का पता लगाया।",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

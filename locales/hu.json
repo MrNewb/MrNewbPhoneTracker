@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Telefonos torony pingelése telefonhoz",
+        "NoInput": "Nincs megadott bemenet.",
+        "Placeholder": "Telefonszám",
+        "Description": "Telefonszám leírás",
+        "Submit": "Küldés",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Nem tudod, hogyan kell használni ezt.",
+        "Unabletolocate": "Nem lehet megtalálni a telefont, vagy offline lehet."
+    },
+    "Dispatch": {
+        "Message": "A telefon követő megtalálta a telefonszámot.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

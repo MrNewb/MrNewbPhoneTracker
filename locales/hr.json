@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Ping telefonski toranj za telefon",
+        "NoInput": "Nema unesenog unosa.",
+        "Placeholder": "Telefonski broj",
+        "Description": "Opis telefonskog broja",
+        "Submit": "Pošalji",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Ne znaš kako koristiti ovo.",
+        "Unabletolocate": "Nije moguće locirati telefon ili može biti izvan mreže."
+    },
+    "Dispatch": {
+        "Message": "Telefon tracker je locirao telefonski broj.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

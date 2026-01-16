@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Проследяване на телефонна кула за телефон",
+        "NoInput": "Не е предоставен вход.",
+        "Placeholder": "Телефонен номер",
+        "Description": "Описание на телефонен номер",
+        "Submit": "Изпрати",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Не знаеш как да използваш това.",
+        "Unabletolocate": "Не може да се намери телефон или може да е офлайн."
+    },
+    "Dispatch": {
+        "Message": "Телефонният тракер намери телефонен номер.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

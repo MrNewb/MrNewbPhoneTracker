@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "为手机定位电话塔",
+        "NoInput": "未提供输入。",
+        "Placeholder": "电话号码",
+        "Description": "电话号码描述",
+        "Submit": "提交",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "你不知道如何使用这个。",
+        "Unabletolocate": "无法定位手机或可能离线。"
+    },
+    "Dispatch": {
+        "Message": "电话追踪器定位了电话号码。",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

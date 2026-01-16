@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Пинг телефонной вышки для телефона",
+        "NoInput": "Ввод не предоставлен.",
+        "Placeholder": "Номер телефона",
+        "Description": "Описание номера телефона",
+        "Submit": "Отправить",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Вы не знаете, как это использовать.",
+        "Unabletolocate": "Не удается найти телефон или он может быть отключен."
+    },
+    "Dispatch": {
+        "Message": "Трекер телефона нашел номер телефона.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

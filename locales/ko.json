@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "전화용 전화 타워 핑",
+        "NoInput": "입력이 제공되지 않았습니다.",
+        "Placeholder": "전화번호",
+        "Description": "전화번호 설명",
+        "Submit": "제출",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "이것을 사용하는 방법을 모릅니다.",
+        "Unabletolocate": "전화를 찾을 수 없거나 오프라인일 수 있습니다."
+    },
+    "Dispatch": {
+        "Message": "전화 추적기가 전화번호를 찾았습니다.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

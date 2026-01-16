@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Ping turn de telefon pentru telefon",
+        "NoInput": "Nu a fost furnizată nicio intrare.",
+        "Placeholder": "Număr de telefon",
+        "Description": "Descriere număr de telefon",
+        "Submit": "Trimite",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Nu știi cum să folosești asta.",
+        "Unabletolocate": "Nu se poate localiza telefonul sau poate fi offline."
+    },
+    "Dispatch": {
+        "Message": "Trackerul de telefon a localizat numărul de telefon.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

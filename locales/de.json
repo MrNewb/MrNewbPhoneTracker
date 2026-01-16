@@ -1,0 +1,19 @@
+{
+    "InputMenu": {
+        "Title": "Telefon-Turm für Telefon anpingen",
+        "NoInput": "Keine Eingabe bereitgestellt.",
+        "Placeholder": "Telefonnummer",
+        "Description": "Telefonnummer Beschreibung",
+        "Submit": "Absenden",
+        "Icon": "fa-solid fa-square-phone"
+    },
+    "Restricted": {
+        "JobLocked": "Du weißt nicht, wie man das benutzt.",
+        "Unabletolocate": "Telefon kann nicht gefunden werden oder ist möglicherweise offline."
+    },
+    "Dispatch": {
+        "Message": "Telefon-Tracker hat Telefonnummer gefunden.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}
