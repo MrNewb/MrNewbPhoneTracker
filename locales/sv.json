@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Pinga telefontornet för telefon",
-        "NoInput": "Ingen inmatning tillhandahållen.",
-        "Placeholder": "Telefonnummer",
-        "Description": "Telefonnummer beskrivning",
-        "Submit": "Skicka",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Spåra",
+        "Number": "Telefonnummer",
+        "Empty": "Ange ett nummer",
+        "Cooldown": "Vänta {{time}}s",
+        "NoItem": "Tracker krävs"
     },
     "Restricted": {
         "JobLocked": "Du vet inte hur man använder detta.",
-        "Unabletolocate": "Kan inte hitta telefon eller den kan vara offline."
+        "Unabletolocate": "Kunde inte hitta telefonen.",
+        "NoItem": "Du behöver en tracker.",
+        "Cooldown": "Tracker kyls ner."
     },
     "Dispatch": {
-        "Message": "Telefonspåraren hittade telefonnummer.",
+        "Message": "Telefon spårad.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

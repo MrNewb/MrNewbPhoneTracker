@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping telefonski toranj za telefon",
-        "NoInput": "Nema unesenog unosa.",
-        "Placeholder": "Telefonski broj",
-        "Description": "Opis telefonskog broja",
-        "Submit": "Pošalji",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Prati",
+        "Number": "Broj telefona",
+        "Empty": "Unesi broj",
+        "Cooldown": "Pričekaj {{time}}s",
+        "NoItem": "Potreban tracker"
     },
     "Restricted": {
-        "JobLocked": "Ne znaš kako koristiti ovo.",
-        "Unabletolocate": "Nije moguće locirati telefon ili može biti izvan mreže."
+        "JobLocked": "Ne znaš kako ovo koristiti.",
+        "Unabletolocate": "Telefon nije pronađen.",
+        "NoItem": "Treba ti tracker.",
+        "Cooldown": "Tracker se hladi."
     },
     "Dispatch": {
-        "Message": "Telefon tracker je locirao telefonski broj.",
+        "Message": "Telefon praćen.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

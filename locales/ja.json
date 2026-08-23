@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "電話の電話塔をピングする",
-        "NoInput": "入力が提供されていません。",
-        "Placeholder": "電話番号",
-        "Description": "電話番号の説明",
-        "Submit": "送信",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "追跡",
+        "Number": "電話番号",
+        "Empty": "番号を入力",
+        "Cooldown": "{{time}}秒待機",
+        "NoItem": "トラッカーが必要"
     },
     "Restricted": {
-        "JobLocked": "これの使い方がわかりません。",
-        "Unabletolocate": "電話を見つけることができないか、オフラインである可能性があります。"
+        "JobLocked": "使い方がわかりません。",
+        "Unabletolocate": "電話を特定できません。",
+        "NoItem": "トラッカーが必要です。",
+        "Cooldown": "トラッカー冷却中。"
     },
     "Dispatch": {
-        "Message": "電話トラッカーが電話番号を見つけました。",
+        "Message": "電話を追跡しました。",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

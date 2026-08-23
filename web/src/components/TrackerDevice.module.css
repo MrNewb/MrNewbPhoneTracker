@@ -1,0 +1,338 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 5.5vh;
+  margin: 0;
+  background: transparent !important;
+  pointer-events: none;
+}
+
+.shell {
+  position: relative;
+  width: min(22.5rem, 38vh);
+  aspect-ratio: 2 / 3;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  pointer-events: auto;
+  animation: rise 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chassis {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  background: transparent;
+  filter: drop-shadow(0 1.5rem 2.2rem var(--tracker-shadow));
+}
+
+.glass {
+  position: absolute;
+  left: 15.5%;
+  top: 7.2%;
+  width: 66%;
+  height: 56%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4rem 0.55rem 0.1rem;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 0.55rem;
+  min-width: 0;
+}
+
+.statusBlock {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.16rem;
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-right: 0.15rem;
+  min-width: 0;
+}
+
+.statusLabel {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: var(--tracker-ink);
+  line-height: 1.35;
+}
+
+.gpsRow {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--tracker-ink);
+  line-height: 1.35;
+}
+
+.gpsLed {
+  width: 1.55rem;
+  height: 0.28rem;
+  border-radius: 1px;
+  background: var(--tracker-cyan);
+  box-shadow: 0 0.35rem 0.7rem var(--tracker-cyan-glow), 0 0 0.55rem var(--tracker-cyan-lamp);
+}
+
+.gpsBusy .gpsLed {
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+.readout {
+  position: relative;
+  width: 92%;
+  margin-top: 0.45rem;
+  flex: 0 0 auto;
+  min-width: 0;
+  border-radius: 0.2rem;
+  transition: box-shadow 140ms ease;
+}
+
+.readout:focus-within {
+  box-shadow: 0 0 0 0.12rem var(--tracker-cyan-focus);
+}
+
+.numberInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  opacity: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+}
+
+.numberInput:focus,
+.numberInput:focus-visible {
+  outline: none;
+}
+
+.error,
+.errorSlot {
+  min-height: 1.15rem;
+  margin: 0.08rem 0 0.15rem;
+  padding: 0 0.25rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  color: transparent;
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.error {
+  color: var(--tracker-miss);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.keypad {
+  width: 52%;
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem 0.36rem;
+  align-content: start;
+  justify-items: center;
+  background: transparent;
+  min-width: 0;
+}
+
+.keySpacer {
+  width: 1.45rem;
+  height: 1.45rem;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.key {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin: 0;
+  padding: 0.08em 0 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--tracker-key-stroke);
+  background: transparent;
+  color: var(--tracker-ink);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  text-indent: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.key::before {
+  content: '';
+  position: absolute;
+  inset: -0.4rem;
+}
+
+.key:hover:not(:disabled) {
+  background: var(--tracker-cyan-hover);
+  border-color: var(--tracker-cyan);
+  color: var(--tracker-cyan);
+}
+
+.key:active:not(:disabled) {
+  background: var(--tracker-cyan-press);
+}
+
+.key:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--tracker-cyan);
+  outline-offset: 2px;
+}
+
+.dial {
+  position: absolute;
+  left: 50%;
+  bottom: 14.1%;
+  width: max(13.9%, 2.75rem);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.dial:hover:not(:disabled) {
+  box-shadow: 0 0 0 0.35rem var(--tracker-cyan-soft);
+}
+
+.dial:disabled {
+  cursor: default;
+}
+
+.dialCooldown {
+  box-shadow: 0 0 0 0.28rem var(--tracker-cyan-ghost);
+  opacity: 0.72;
+  cursor: default;
+}
+
+.dial:focus-visible {
+  outline: 2px solid var(--tracker-cyan);
+  outline-offset: 3px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0.35;
+    transform: translateY(1.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (pointer: coarse) {
+  .key,
+  .keySpacer {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .key::before {
+    inset: -0.2rem;
+  }
+
+  .dial {
+    width: max(15%, 2.75rem);
+    bottom: 13.8%;
+    left: 50%;
+  }
+
+  .keypad {
+    width: 62%;
+    gap: 0.36rem 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell {
+    animation: none;
+  }
+
+  .gpsBusy .gpsLed {
+    animation: none;
+    opacity: 0.4;
+  }
+
+  .readout,
+  .key {
+    transition: none;
+  }
+}

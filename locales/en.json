@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping Phone Tower For Phone",
-        "NoInput": "No input provided.",
-        "Placeholder": "Phone Number",
-        "Description": "Phone Number Description",
-        "Submit": "Submit",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Track",
+        "Number": "Phone number",
+        "Empty": "Enter a number",
+        "Cooldown": "Wait {{time}}s",
+        "NoItem": "Tracker required"
     },
     "Restricted": {
-        "JobLocked": "You dont know how to use this.",
-        "Unabletolocate": "Unable to locate phone or it may be offline."
+        "JobLocked": "You don't know how to use this.",
+        "Unabletolocate": "Unable to locate phone.",
+        "NoItem": "You need a tracker to do that.",
+        "Cooldown": "Tracker cooling down."
     },
     "Dispatch": {
-        "Message": "Phone Tracker Located Phone Number.",
+        "Message": "Phone tracked.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

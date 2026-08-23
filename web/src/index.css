@@ -1,0 +1,63 @@
+:root {
+  --tracker-cyan: #5ee7ff;
+  --tracker-cyan-glow: rgba(0, 229, 255, 0.28);
+  --tracker-cyan-lamp: rgba(94, 231, 255, 0.9);
+  --tracker-cyan-soft: rgba(94, 231, 255, 0.18);
+  --tracker-cyan-hover: rgba(94, 231, 255, 0.08);
+  --tracker-cyan-press: rgba(94, 231, 255, 0.16);
+  --tracker-cyan-ghost: rgba(94, 231, 255, 0.12);
+  --tracker-cyan-focus: rgba(94, 231, 255, 0.35);
+  --tracker-ink: #f4f7f8;
+  --tracker-key-stroke: rgba(244, 247, 248, 0.78);
+  --tracker-miss: #ff6b6b;
+  --tracker-selection: rgba(0, 229, 255, 0.35);
+  --tracker-shadow: rgba(0, 0, 0, 0.58);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Barlow Condensed', 'Segoe UI', sans-serif;
+  color: var(--tracker-ink);
+  user-select: none;
+}
+
+::selection {
+  background: var(--tracker-selection);
+  color: var(--tracker-ink);
+}
+
+input {
+  caret-color: var(--tracker-cyan);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--tracker-cyan);
+  outline-offset: 3px;
+}

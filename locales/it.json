@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping torre telefonica per telefono",
-        "NoInput": "Nessun input fornito.",
-        "Placeholder": "Numero di telefono",
-        "Description": "Descrizione numero di telefono",
-        "Submit": "Invia",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Traccia",
+        "Number": "Numero di telefono",
+        "Empty": "Inserisci un numero",
+        "Cooldown": "Attendi {{time}}s",
+        "NoItem": "Tracker richiesto"
     },
     "Restricted": {
         "JobLocked": "Non sai come usare questo.",
-        "Unabletolocate": "Impossibile localizzare il telefono o potrebbe essere offline."
+        "Unabletolocate": "Impossibile localizzare il telefono.",
+        "NoItem": "Serve un tracker.",
+        "Cooldown": "Tracker in raffreddamento."
     },
     "Dispatch": {
-        "Message": "Il tracker del telefono ha localizzato il numero di telefono.",
+        "Message": "Telefono tracciato.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

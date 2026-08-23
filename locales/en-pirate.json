@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping th' Phone Tower Fer Phone",
-        "NoInput": "No input provided, ye scallywag.",
-        "Placeholder": "Phone Number",
-        "Description": "Phone Number Description, arrr",
-        "Submit": "Submit, matey",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Track",
+        "Number": "Ship number",
+        "Empty": "Enter a number",
+        "Cooldown": "Wait {{time}}s",
+        "NoItem": "Need a tracker, ye do"
     },
     "Restricted": {
-        "JobLocked": "Ye don't know how t' use this, landlubber.",
-        "Unabletolocate": "Unable t' locate phone or it may be offline, arrr."
+        "JobLocked": "Ye don't know how to use this.",
+        "Unabletolocate": "Cannot find that phone.",
+        "NoItem": "Ye need a tracker to do that.",
+        "Cooldown": "Tracker be coolin down."
     },
     "Dispatch": {
-        "Message": "Phone Tracker Located Phone Number, me hearties.",
+        "Message": "Phone tracked.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

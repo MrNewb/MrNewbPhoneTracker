@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping puhelintorni puhelimelle",
-        "NoInput": "Syötettä ei annettu.",
-        "Placeholder": "Puhelinnumero",
-        "Description": "Puhelinnumeron kuvaus",
-        "Submit": "Lähetä",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Seuraa",
+        "Number": "Puhelinnumero",
+        "Empty": "Syötä numero",
+        "Cooldown": "Odota {{time}}s",
+        "NoItem": "Tracker vaaditaan"
     },
     "Restricted": {
-        "JobLocked": "Et tiedä kuinka käyttää tätä.",
-        "Unabletolocate": "Puhelinta ei voi paikantaa tai se voi olla offline-tilassa."
+        "JobLocked": "Et osaa käyttää tätä.",
+        "Unabletolocate": "Puhelinta ei löydy.",
+        "NoItem": "Tarvitset trackerin.",
+        "Cooldown": "Tracker jäähtyy."
     },
     "Dispatch": {
-        "Message": "Puhelimen seuranta löysi puhelinnumeron.",
+        "Message": "Puhelin jäljitetty.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping Foontoring vir Foon",
-        "NoInput": "Geen invoer verskaf nie.",
-        "Placeholder": "Foonnommer",
-        "Description": "Foonnommer Beskrywing",
-        "Submit": "Dien in",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Volg",
+        "Number": "Foonnommer",
+        "Empty": "Voer 'n nommer in",
+        "Cooldown": "Wag {{time}}s",
+        "NoItem": "Tracker vereis"
     },
     "Restricted": {
         "JobLocked": "Jy weet nie hoe om dit te gebruik nie.",
-        "Unabletolocate": "Kan nie foon opspoor nie of dit mag aflyn wees."
+        "Unabletolocate": "Kan nie die foon vind nie.",
+        "NoItem": "Jy benodig 'n tracker.",
+        "Cooldown": "Tracker koel af."
     },
     "Dispatch": {
-        "Message": "Foonspoorder het foonnommer opgespoor.",
+        "Message": "Foon opgespoor.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "為手機定位電話塔",
-        "NoInput": "未提供輸入。",
-        "Placeholder": "電話號碼",
-        "Description": "電話號碼描述",
-        "Submit": "提交",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "追踪",
+        "Number": "电话号码",
+        "Empty": "输入号码",
+        "Cooldown": "等待 {{time}}秒",
+        "NoItem": "需要追踪器"
     },
     "Restricted": {
-        "JobLocked": "你不知道如何使用這個。",
-        "Unabletolocate": "無法定位手機或可能離線。"
+        "JobLocked": "你不知道怎么用这个。",
+        "Unabletolocate": "无法定位电话。",
+        "NoItem": "你需要追踪器。",
+        "Cooldown": "追踪器冷却中。"
     },
     "Dispatch": {
-        "Message": "電話追蹤器定位了電話號碼。",
+        "Message": "已追踪电话。",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

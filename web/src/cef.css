@@ -1,0 +1,22 @@
+:root,
+html {
+  color-scheme: normal !important;
+}
+
+html,
+body,
+#root {
+  background: transparent !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html.is-browser,
+html.is-browser body,
+html.is-browser #root {
+  background: #5c6570 !important;
+  background-color: #5c6570 !important;
+}

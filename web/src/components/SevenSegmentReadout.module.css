@@ -1,0 +1,28 @@
+.readoutFace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.05rem;
+  height: 1.9rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.digit {
+  height: 100%;
+  width: auto;
+  flex: 0 1 auto;
+  max-width: 1.15rem;
+  min-width: 0;
+}
+
+.segOn {
+  fill: var(--tracker-cyan);
+  filter: drop-shadow(0 0 0.16rem rgba(94, 231, 255, 0.75));
+}
+
+.segOff {
+  fill: var(--tracker-cyan-ghost);
+}

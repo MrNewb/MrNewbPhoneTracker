@@ -1,0 +1,7 @@
+/.impeccable
+/web/scripts
+/web/node_modules
+/release
+DESIGN.md
+PRODUCT.md
+*.zip

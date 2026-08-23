@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping telefontårn for telefon",
-        "NoInput": "Ingen inndata oppgitt.",
-        "Placeholder": "Telefonnummer",
-        "Description": "Telefonnummer beskrivelse",
-        "Submit": "Send inn",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Spor",
+        "Number": "Telefonnummer",
+        "Empty": "Skriv inn et nummer",
+        "Cooldown": "Vent {{time}}s",
+        "NoItem": "Tracker kreves"
     },
     "Restricted": {
         "JobLocked": "Du vet ikke hvordan du bruker dette.",
-        "Unabletolocate": "Kan ikke finne telefon eller den kan være frakoblet."
+        "Unabletolocate": "Fant ikke telefonen.",
+        "NoItem": "Du trenger en tracker.",
+        "Cooldown": "Tracker kjøler ned."
     },
     "Dispatch": {
-        "Message": "Telefon sporing fant telefonnummer.",
+        "Message": "Telefon sporet.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

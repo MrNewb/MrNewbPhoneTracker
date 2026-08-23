@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Telefon için telefon kulesini pingler",
-        "NoInput": "Giriş sağlanmadı.",
-        "Placeholder": "Telefon Numarası",
-        "Description": "Telefon Numarası Açıklaması",
-        "Submit": "Gönder",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Takip",
+        "Number": "Telefon numarası",
+        "Empty": "Bir numara girin",
+        "Cooldown": "{{time}}s bekle",
+        "NoItem": "İzleyici gerekli"
     },
     "Restricted": {
         "JobLocked": "Bunu nasıl kullanacağını bilmiyorsun.",
-        "Unabletolocate": "Telefon bulunamıyor veya çevrimdışı olabilir."
+        "Unabletolocate": "Telefon bulunamadı.",
+        "NoItem": "Bir izleyiciye ihtiyacın var.",
+        "Cooldown": "İzleyici soğuyor."
     },
     "Dispatch": {
-        "Message": "Telefon Takipçisi telefon numarasını buldu.",
+        "Message": "Telefon takip edildi.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

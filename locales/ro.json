@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping turn de telefon pentru telefon",
-        "NoInput": "Nu a fost furnizată nicio intrare.",
-        "Placeholder": "Număr de telefon",
-        "Description": "Descriere număr de telefon",
-        "Submit": "Trimite",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Urmărește",
+        "Number": "Număr de telefon",
+        "Empty": "Introdu un număr",
+        "Cooldown": "Așteaptă {{time}}s",
+        "NoItem": "Tracker necesar"
     },
     "Restricted": {
         "JobLocked": "Nu știi cum să folosești asta.",
-        "Unabletolocate": "Nu se poate localiza telefonul sau poate fi offline."
+        "Unabletolocate": "Telefonul nu a fost găsit.",
+        "NoItem": "Ai nevoie de un tracker.",
+        "Cooldown": "Trackerul se răcește."
     },
     "Dispatch": {
-        "Message": "Trackerul de telefon a localizat numărul de telefon.",
+        "Message": "Telefon urmărit.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

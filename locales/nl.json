@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping telefoontoren voor telefoon",
-        "NoInput": "Geen invoer verstrekt.",
-        "Placeholder": "Telefoonnummer",
-        "Description": "Telefoonnummer beschrijving",
-        "Submit": "Verzenden",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Volgen",
+        "Number": "Telefoonnummer",
+        "Empty": "Voer een nummer in",
+        "Cooldown": "Wacht {{time}}s",
+        "NoItem": "Tracker vereist"
     },
     "Restricted": {
         "JobLocked": "Je weet niet hoe je dit moet gebruiken.",
-        "Unabletolocate": "Kan telefoon niet vinden of deze kan offline zijn."
+        "Unabletolocate": "Telefoon niet gevonden.",
+        "NoItem": "Je hebt een tracker nodig.",
+        "Cooldown": "Tracker koelt af."
     },
     "Dispatch": {
-        "Message": "Telefoon tracker heeft telefoonnummer gevonden.",
+        "Message": "Telefoon gevolgd.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

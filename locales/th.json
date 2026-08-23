@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "ปิงหอโทรศัพท์สำหรับโทรศัพท์",
-        "NoInput": "ไม่มีการป้อนข้อมูล",
-        "Placeholder": "หมายเลขโทรศัพท์",
-        "Description": "คำอธิบายหมายเลขโทรศัพท์",
-        "Submit": "ส่ง",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "ติดตาม",
+        "Number": "หมายเลขโทรศัพท์",
+        "Empty": "ใส่หมายเลข",
+        "Cooldown": "รอ {{time}}วิ",
+        "NoItem": "ต้องมีแทร็กเกอร์"
     },
     "Restricted": {
         "JobLocked": "คุณไม่รู้วิธีใช้สิ่งนี้",
-        "Unabletolocate": "ไม่สามารถค้นหาโทรศัพท์หรืออาจออフไลน์"
+        "Unabletolocate": "หาโทรศัพท์ไม่พบ",
+        "NoItem": "คุณต้องมีแทร็กเกอร์",
+        "Cooldown": "แทร็กเกอร์กำลังคูลดาวน์"
     },
     "Dispatch": {
-        "Message": "ตัวติดตามโทรศัพท์พบหมายเลขโทรศัพท์แล้ว",
+        "Message": "ติดตามโทรศัพท์แล้ว",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

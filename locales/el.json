@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Εντοπισμός πύργου τηλεφώνου για τηλέφωνο",
-        "NoInput": "Δεν παρέχεται είσοδος.",
-        "Placeholder": "Αριθμός τηλεφώνου",
-        "Description": "Περιγραφή αριθμού τηλεφώνου",
-        "Submit": "Υποβολή",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Εντοπισμός",
+        "Number": "Αριθμός τηλεφώνου",
+        "Empty": "Εισάγετε αριθμό",
+        "Cooldown": "Περιμένετε {{time}}δ",
+        "NoItem": "Απαιτείται tracker"
     },
     "Restricted": {
-        "JobLocked": "Δεν ξέρεις πώς να το χρησιμοποιήσεις αυτό.",
-        "Unabletolocate": "Αδυναμία εντοπισμού τηλεφώνου ή μπορεί να είναι εκτός σύνδεσης."
+        "JobLocked": "Δεν ξέρετε πώς να το χρησιμοποιήσετε.",
+        "Unabletolocate": "Δεν βρέθηκε το τηλέφωνο.",
+        "NoItem": "Χρειάζεστε tracker.",
+        "Cooldown": "Το tracker κρυώνει."
     },
     "Dispatch": {
-        "Message": "Ο εντοπιστής τηλεφώνου εντόπισε τον αριθμό τηλεφώνου.",
+        "Message": "Το τηλέφωνο εντοπίστηκε.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

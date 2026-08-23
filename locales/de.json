@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Telefon-Turm für Telefon anpingen",
-        "NoInput": "Keine Eingabe bereitgestellt.",
-        "Placeholder": "Telefonnummer",
-        "Description": "Telefonnummer Beschreibung",
-        "Submit": "Absenden",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Orten",
+        "Number": "Telefonnummer",
+        "Empty": "Nummer eingeben",
+        "Cooldown": "Warte {{time}}s",
+        "NoItem": "Tracker erforderlich"
     },
     "Restricted": {
         "JobLocked": "Du weißt nicht, wie man das benutzt.",
-        "Unabletolocate": "Telefon kann nicht gefunden werden oder ist möglicherweise offline."
+        "Unabletolocate": "Telefon nicht gefunden.",
+        "NoItem": "Du brauchst einen Tracker.",
+        "Cooldown": "Tracker kühlt ab."
     },
     "Dispatch": {
-        "Message": "Telefon-Tracker hat Telefonnummer gefunden.",
+        "Message": "Telefon geortet.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

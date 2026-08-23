@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Pinguj wieżę telefoniczną dla telefonu",
-        "NoInput": "Nie podano danych wejściowych.",
-        "Placeholder": "Numer telefonu",
-        "Description": "Opis numeru telefonu",
-        "Submit": "Wyślij",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Śledź",
+        "Number": "Numer telefonu",
+        "Empty": "Wpisz numer",
+        "Cooldown": "Czekaj {{time}}s",
+        "NoItem": "Wymagany tracker"
     },
     "Restricted": {
         "JobLocked": "Nie wiesz, jak tego używać.",
-        "Unabletolocate": "Nie można zlokalizować telefonu lub może być offline."
+        "Unabletolocate": "Nie można zlokalizować telefonu.",
+        "NoItem": "Potrzebujesz trackera.",
+        "Cooldown": "Tracker się chłodzi."
     },
     "Dispatch": {
-        "Message": "Tracker telefonu zlokalizował numer telefonu.",
+        "Message": "Telefon namierzony.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

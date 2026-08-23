@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Ping torre de teléfono para teléfono",
-        "NoInput": "No se proporcionó ninguna entrada.",
-        "Placeholder": "Número de teléfono",
-        "Description": "Descripción del número de teléfono",
-        "Submit": "Enviar",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Rastrear",
+        "Number": "Número de teléfono",
+        "Empty": "Introduce un número",
+        "Cooldown": "Espera {{time}}s",
+        "NoItem": "Se requiere rastreador"
     },
     "Restricted": {
         "JobLocked": "No sabes cómo usar esto.",
-        "Unabletolocate": "No se puede localizar el teléfono o puede estar desconectado."
+        "Unabletolocate": "No se puede localizar el teléfono.",
+        "NoItem": "Necesitas un rastreador.",
+        "Cooldown": "Rastreador en enfriamiento."
     },
     "Dispatch": {
-        "Message": "El rastreador de teléfonos localizó el número de teléfono.",
+        "Message": "Teléfono localizado.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "تحديد موقع برج الهاتف للهاتف",
-        "NoInput": "لم يتم تقديم أي إدخال.",
-        "Placeholder": "رقم الهاتف",
-        "Description": "وصف رقم الهاتف",
-        "Submit": "إرسال",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "تتبع",
+        "Number": "رقم الهاتف",
+        "Empty": "أدخل رقمًا",
+        "Cooldown": "انتظر {{time}}ث",
+        "NoItem": "مطلوب جهاز تتبع"
     },
     "Restricted": {
-        "JobLocked": "أنت لا تعرف كيفية استخدام هذا.",
-        "Unabletolocate": "غير قادر على تحديد موقع الهاتف أو قد يكون غير متصل."
+        "JobLocked": "لا تعرف كيف تستخدم هذا.",
+        "Unabletolocate": "تعذر تحديد موقع الهاتف.",
+        "NoItem": "تحتاج إلى جهاز تتبع.",
+        "Cooldown": "جهاز التتبع يبرد."
     },
     "Dispatch": {
-        "Message": "متتبع الهاتف حدد موقع رقم الهاتف.",
+        "Message": "تم تتبع الهاتف.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

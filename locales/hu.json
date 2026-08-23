@@ -1,18 +1,21 @@
 {
-    "InputMenu": {
-        "Title": "Telefonos torony pingelése telefonhoz",
-        "NoInput": "Nincs megadott bemenet.",
-        "Placeholder": "Telefonszám",
-        "Description": "Telefonszám leírás",
-        "Submit": "Küldés",
-        "Icon": "fa-solid fa-square-phone"
+    "Device": {
+        "Status": "STATUS",
+        "Gps": "GPS",
+        "Ping": "Követés",
+        "Number": "Telefonszám",
+        "Empty": "Adj meg egy számot",
+        "Cooldown": "Várj {{time}}s",
+        "NoItem": "Tracker szükséges"
     },
     "Restricted": {
-        "JobLocked": "Nem tudod, hogyan kell használni ezt.",
-        "Unabletolocate": "Nem lehet megtalálni a telefont, vagy offline lehet."
+        "JobLocked": "Nem tudod, hogyan használd.",
+        "Unabletolocate": "A telefon nem található.",
+        "NoItem": "Tracker kell hozzá.",
+        "Cooldown": "A tracker hűl."
     },
     "Dispatch": {
-        "Message": "A telefon követő megtalálta a telefonszámot.",
+        "Message": "Telefon követve.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }
