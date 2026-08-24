@@ -47,13 +47,13 @@ export default function App() {
 
   useEffect(() => {
     if (!open) return
-    const onKey = (event: KeyboardEvent) => {
+    const handleEscape = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return
       event.preventDefault()
       closeDevice()
     }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
   }, [closeDevice, open])
 
   if (!open) return null

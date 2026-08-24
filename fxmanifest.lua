@@ -5,12 +5,13 @@ lua54 'yes'
 name 'MrNewbPhoneTracker'
 author 'MrNewb'
 description 'Phone Tracker for FiveM, this allows for tracking a player by the phone number.'
-version '3.1.0'
+version '3.1.1'
 
 shared_scripts {
     '@ox_lib/init.lua',
     '@Newb_Bridge/import.lua',
     'configs/config.lua',
+    'resource/shared/locale.lua',
 }
 
 client_scripts {

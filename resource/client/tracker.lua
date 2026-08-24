@@ -1,9 +1,6 @@
-lib.locale()
-
 local trackerOpen = false
 local activeBlip
 
----@param coords vector3|table
 local function showTrackedLocationOnMap(coords)
     if type(coords) ~= 'table' then return end
 
@@ -27,12 +24,7 @@ local function showTrackedLocationOnMap(coords)
     AddTextComponentSubstringPlayerName(locale('Dispatch.Message'))
     EndTextCommandSetBlipName(activeBlip)
 
-    bridge.notifications.notify({
-        title = locale('Dispatch.Code'),
-        description = locale('Dispatch.Message'),
-        type = 'inform',
-        duration = 5000,
-    })
+    bridge.notifications.notify({ title = locale('Dispatch.Code'), description = locale('Dispatch.Message'), type = 'inform', duration = 5000 })
 
     SetTimeout(100000, function()
         if activeBlip and DoesBlipExist(activeBlip) then
@@ -77,7 +69,7 @@ local function openTracker()
     })
 end
 
-RegisterNetEvent('MrNewbPhoneTracker:client:requestCoord', function()
+RegisterNetEvent('MrNewbPhoneTracker:Client:OpenTracker', function()
     if source ~= 65535 then return end
     openTracker()
 end)
@@ -105,10 +97,10 @@ RegisterNUICallback('TRACKER_PING', function(data, cb)
     end
 
     if Config.Utility.Debug then
-        print(('[MrNewbPhoneTracker] Running search for number: %s'):format(phoneNumber))
+        print(('[MrNewbPhoneTracker] Searching for number %s'):format(phoneNumber))
     end
 
-    local result = lib.callback.await('MrNewbPhoneTracker:callback:getCoord', false, phoneNumber)
+    local result = lib.callback.await('MrNewbPhoneTracker:Callback:PingNumber', false, phoneNumber)
     if type(result) ~= 'table' or not result.ok then
         if Config.Utility.Debug then
             print('[MrNewbPhoneTracker] Ping rejected', result and result.reason)

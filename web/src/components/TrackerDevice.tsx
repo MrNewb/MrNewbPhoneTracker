@@ -17,7 +17,7 @@ export type TrackerLabels = {
 
 const keypadLayout = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', ''] as const
 
-/** Survives close/reopen so the dial stays locked for the full cooldown. */
+// Module-level so closing the device does not reset the cooldown.
 let submitCooldownUntilMs = 0
 
 function sanitizePhoneNumber(value: string) {
@@ -52,7 +52,7 @@ export function TrackerDevice({
   const inputRef = useRef<HTMLInputElement>(null)
   const errorId = useId()
   const [phoneNumber, setPhoneNumber] = useState('')
-  const [busy, setBusy] = useState(false)
+  const [pinging, setPinging] = useState(false)
   const [error, setError] = useState('')
   const [cooldownLeft, setCooldownLeft] = useState(() => getCooldownRemainingSeconds())
 
@@ -75,10 +75,10 @@ export function TrackerDevice({
     return () => window.clearInterval(timer)
   }, [refreshCooldown])
 
-  const submitLocked = busy || cooldownLeft > 0
+  const submitLocked = pinging || cooldownLeft > 0
 
   function appendDigit(value: string) {
-    if (busy || value === '') return
+    if (pinging || value === '') return
     setError('')
     setPhoneNumber((current) => sanitizePhoneNumber(current + value))
     inputRef.current?.focus()
@@ -97,19 +97,19 @@ export function TrackerDevice({
       return
     }
 
-    const trimmed = sanitizePhoneNumber(phoneNumber)
-    if (!trimmed) {
+    const digits = sanitizePhoneNumber(phoneNumber)
+    if (!digits) {
       setError(labels.empty)
       return
     }
 
-    setBusy(true)
+    setPinging(true)
     setError('')
     try {
       const result = await fetchNui<PingResult>(
         'TRACKER_PING',
-        { phoneNumber: trimmed },
-        { ok: trimmed === '5550147', wait: cooldownSeconds },
+        { phoneNumber: digits },
+        { ok: digits === '5550147', wait: cooldownSeconds },
       )
 
       const waitSeconds = typeof result.wait === 'number' ? result.wait : cooldownSeconds
@@ -135,7 +135,7 @@ export function TrackerDevice({
     } catch {
       setError(labels.miss)
     } finally {
-      setBusy(false)
+      setPinging(false)
     }
     inputRef.current?.focus()
   }
@@ -167,7 +167,7 @@ export function TrackerDevice({
         <div className={styles.glass}>
           <div className={styles.statusBlock}>
             <p className={styles.statusLabel}>{labels.status}</p>
-            <p className={`${styles.gpsRow} ${busy ? styles.gpsBusy : ''}`}>
+            <p className={`${styles.gpsRow} ${pinging ? styles.gpsBusy : ''}`}>
               <span className={styles.gpsLed} aria-hidden />
               <span>{labels.gps}</span>
             </p>
@@ -187,7 +187,7 @@ export function TrackerDevice({
               autoComplete="off"
               spellCheck={false}
               maxLength={phoneNumberMaxLength}
-              disabled={busy}
+              disabled={pinging}
               aria-invalid={Boolean(error)}
               aria-describedby={statusMessage ? errorId : undefined}
             />
@@ -211,7 +211,7 @@ export function TrackerDevice({
                   key={key}
                   type="button"
                   className={styles.key}
-                  disabled={busy || phoneNumber.length >= phoneNumberMaxLength}
+                  disabled={pinging || phoneNumber.length >= phoneNumberMaxLength}
                   onClick={() => appendDigit(key)}
                 >
                   {key}
@@ -228,7 +228,7 @@ export function TrackerDevice({
           aria-label={
             cooldownLeft > 0 ? formatCooldownLabel(labels.cooldown, cooldownLeft) : labels.ping
           }
-          aria-busy={busy}
+          aria-busy={pinging}
         />
       </form>
     </div>

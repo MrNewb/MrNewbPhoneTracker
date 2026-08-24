@@ -5,20 +5,20 @@ const browserPreviewBg = '#5c6570'
 
 function applyCefTransparency() {
   const targets = [document.documentElement, document.body, document.getElementById('root')]
-  for (const el of targets) {
-    if (!el) continue
-    el.style.setProperty('background', 'transparent', 'important')
-    el.style.setProperty('background-color', 'rgba(0, 0, 0, 0)', 'important')
+  for (const element of targets) {
+    if (!element) continue
+    element.style.setProperty('background', 'transparent', 'important')
+    element.style.setProperty('background-color', 'rgba(0, 0, 0, 0)', 'important')
   }
   document.documentElement.style.setProperty('color-scheme', 'normal', 'important')
 }
 
 function applyBrowserPreview() {
   const targets = [document.documentElement, document.body, document.getElementById('root')]
-  for (const el of targets) {
-    if (!el) continue
-    el.style.setProperty('background', browserPreviewBg, 'important')
-    el.style.setProperty('background-color', browserPreviewBg, 'important')
+  for (const element of targets) {
+    if (!element) continue
+    element.style.setProperty('background', browserPreviewBg, 'important')
+    element.style.setProperty('background-color', browserPreviewBg, 'important')
   }
   document.documentElement.classList.add('is-browser')
 }

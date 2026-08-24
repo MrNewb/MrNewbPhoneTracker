@@ -1,9 +1,3 @@
---[[
-	Resolve an online player source from a character phone number.
-	Used by the qb-phone adapter (phone lives on charinfo, not a phone-resource export).
-	Override when your stack stores phone differently.
-]]
-
 ---@param phoneNumber string
 ---@return number|false
 function OpenFindSourceByCharPhone(phoneNumber)
