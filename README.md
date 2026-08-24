@@ -41,4 +41,4 @@ Add the `tracker` item. Icon is `[INSTALL]/images/tracker.png`. Do not add `serv
 
 qb-phone / charinfo: `OpenFindSourceByCharPhone` in `resource/open/server/phone_lookup.lua`.
 
-Phone list and callback: [documentation](https://mrnewb.github.io/docs/mrnewbphonetracker).
+Phone list: [documentation](https://mrnewb.github.io/docs/mrnewbphonetracker).
