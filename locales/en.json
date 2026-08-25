@@ -10,7 +10,7 @@
     },
     "Restricted": {
         "JobLocked": "You don't know how to use this.",
-        "Unabletolocate": "Unable to locate phone.",
+        "Unabletolocate": "Cant find that phone.",
         "NoItem": "You need a tracker to do that.",
         "Cooldown": "Tracker cooling down."
     },
