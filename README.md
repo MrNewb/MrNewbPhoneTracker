@@ -1,8 +1,12 @@
 # MrNewbPhoneTracker
 
+![MrNewbPhoneTracker](.github/assets/banner.webp)
+
 Job-gated tracker item. Punch in a phone number on the handheld GPS; if that player is online you get a waypoint.
 
-[Documentation](https://mrnewb.github.io/docs/mrnewbphonetracker) · [Install guide](https://mrnewb.github.io/docs/mrnewbphonetracker/install) · [Tebex](https://mrnewbscripts.tebex.io/) · [Discord](https://discord.gg/mrnewbscripts)
+[Documentation](https://mrnewb.github.io/docs/mrnewbphonetracker) · [Install guide](https://mrnewb.github.io/docs/mrnewbphonetracker/install) · [Tebex](https://mrnewbscripts.tebex.io/) · [Discord](https://discord.gg/mrnewbscripts) · [Short](https://www.youtube.com/shorts/O6wx3aYk3AI)
+
+<a href="https://www.youtube.com/shorts/O6wx3aYk3AI"><img src=".github/assets/short.webp" alt="MrNewbPhoneTracker on YouTube Shorts" width="200"></a>
 
 Documentation is available at https://mrnewb.github.io/docs/
 
