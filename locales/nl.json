@@ -6,7 +6,15 @@
         "Number": "Telefoonnummer",
         "Empty": "Voer een nummer in",
         "Cooldown": "Wacht {{time}}s",
-        "NoItem": "Tracker vereist"
+        "NoItem": "Tracker vereist",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Je weet niet hoe je dit moet gebruiken.",

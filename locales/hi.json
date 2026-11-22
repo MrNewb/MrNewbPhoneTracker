@@ -6,7 +6,15 @@
         "Number": "फ़ोन नंबर",
         "Empty": "नंबर दर्ज करें",
         "Cooldown": "{{time}}से प्रतीक्षा करें",
-        "NoItem": "ट्रैकर आवश्यक"
+        "NoItem": "ट्रैकर आवश्यक",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "आप नहीं जानते इसे कैसे इस्तेमाल करें.",

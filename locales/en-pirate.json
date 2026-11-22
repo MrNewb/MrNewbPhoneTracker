@@ -6,7 +6,15 @@
         "Number": "Ship number",
         "Empty": "Enter a number",
         "Cooldown": "Wait {{time}}s",
-        "NoItem": "Need a tracker, ye do"
+        "NoItem": "Need a tracker, ye do",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Ye don't know how to use this.",

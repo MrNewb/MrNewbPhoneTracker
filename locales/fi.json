@@ -6,7 +6,15 @@
         "Number": "Puhelinnumero",
         "Empty": "Syötä numero",
         "Cooldown": "Odota {{time}}s",
-        "NoItem": "Tracker vaaditaan"
+        "NoItem": "Tracker vaaditaan",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Et osaa käyttää tätä.",

@@ -60,7 +60,14 @@ local function openTracker()
                 ping = locale('Device.Ping'),
                 number = locale('Device.Number'),
                 empty = locale('Device.Empty'),
-                miss = locale('Restricted.Unabletolocate'),
+                miss = locale('Device.Miss'),
+                ready = locale('Device.Ready'),
+                searching = locale('Device.Searching'),
+                locked = locale('Device.Locked'),
+                hint = locale('Device.Hint'),
+                close = locale('Device.Close'),
+                backspace = locale('Device.Backspace'),
+                clear = locale('Device.Clear'),
                 cooldown = locale('Device.Cooldown'),
                 noItem = locale('Device.NoItem'),
             },
@@ -69,7 +76,7 @@ local function openTracker()
     })
 end
 
-RegisterNetEvent('MrNewbPhoneTracker:Client:OpenTracker', function()
+RegisterNetEvent('MrNewbPhoneTracker:client:usedTracker', function()
     if source ~= 65535 then return end
     openTracker()
 end)
@@ -119,7 +126,7 @@ RegisterNUICallback('TRACKER_PING', function(data, cb)
 end)
 
 AddEventHandler('onResourceStop', function(resourceName)
-    if resourceName ~= GetCurrentResourceName() then return end
+    if resourceName ~= cache.resource then return end
     trackerOpen = false
     SetNuiFocus(false, false)
 end)

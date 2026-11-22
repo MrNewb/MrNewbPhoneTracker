@@ -6,7 +6,15 @@
         "Number": "رقم الهاتف",
         "Empty": "أدخل رقمًا",
         "Cooldown": "انتظر {{time}}ث",
-        "NoItem": "مطلوب جهاز تتبع"
+        "NoItem": "مطلوب جهاز تتبع",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "لا تعرف كيف تستخدم هذا.",

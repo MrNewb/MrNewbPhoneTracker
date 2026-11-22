@@ -6,7 +6,15 @@
         "Number": "Număr de telefon",
         "Empty": "Introdu un număr",
         "Cooldown": "Așteaptă {{time}}s",
-        "NoItem": "Tracker necesar"
+        "NoItem": "Tracker necesar",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Nu știi cum să folosești asta.",

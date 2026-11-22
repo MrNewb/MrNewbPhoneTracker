@@ -17,9 +17,16 @@ const fallbackLabels: TrackerLabels = {
   ping: 'Track',
   number: 'Phone number',
   empty: 'Enter a number',
-  miss: 'Unable to locate phone.',
+  miss: 'No phone found',
   cooldown: 'Wait {{time}}s',
   noItem: 'Tracker required',
+  ready: 'READY',
+  searching: 'SEARCHING',
+  locked: 'LOCKED',
+  hint: 'Enter a number, then press Track',
+  close: 'Close',
+  backspace: 'Delete',
+  clear: 'Clear',
 }
 
 export default function App() {

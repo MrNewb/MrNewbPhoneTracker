@@ -6,7 +6,15 @@
         "Number": "Telefon numarası",
         "Empty": "Bir numara girin",
         "Cooldown": "{{time}}s bekle",
-        "NoItem": "İzleyici gerekli"
+        "NoItem": "İzleyici gerekli",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Bunu nasıl kullanacağını bilmiyorsun.",

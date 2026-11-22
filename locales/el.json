@@ -6,7 +6,15 @@
         "Number": "Αριθμός τηλεφώνου",
         "Empty": "Εισάγετε αριθμό",
         "Cooldown": "Περιμένετε {{time}}δ",
-        "NoItem": "Απαιτείται tracker"
+        "NoItem": "Απαιτείται tracker",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Δεν ξέρετε πώς να το χρησιμοποιήσετε.",

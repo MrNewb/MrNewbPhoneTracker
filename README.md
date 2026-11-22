@@ -4,9 +4,11 @@ Job-gated tracker item. Punch in a phone number on the handheld GPS; if that pla
 
 [Documentation](https://mrnewb.github.io/docs/mrnewbphonetracker) · [Install guide](https://mrnewb.github.io/docs/mrnewbphonetracker/install) · [Tebex](https://mrnewbscripts.tebex.io/) · [Discord](https://discord.gg/mrnewbscripts)
 
+Documentation is available at https://mrnewb.github.io/docs/
+
 ![In-game handheld GPS overlay](.github/assets/preview.jpg)
 
-A GPS sitting in the world with a glass screen and keypad. Escape closes it. A successful ping closes it too and puts the mark on the map. A miss stays on the device so you can try another number.
+A handheld GPS at the lower right of the screen with a number readout, a status line and a keypad. Escape closes it. A successful ping closes it too and puts the mark on the map. A miss stays on the device so you can try another number.
 
 ## Features
 
@@ -32,7 +34,7 @@ Add the `tracker` item. Icon is `[INSTALL]/images/tracker.png`. Do not add `serv
 
 ## Config
 
-`configs/config.lua`:
+`resource/open/shared/config.lua`:
 
 - `RequiredJob` — who can use it (`police = 0`, or a list)
 - `TrackerItem` — default `tracker`

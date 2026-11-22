@@ -1,286 +1,300 @@
+/* The device is a photo. Every control is laid over it by percentage of the image, so it keeps its share of the screen at 1080p, 1440p and 4K. 1vh is the design unit. */
 .stage {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  padding: 0 0 5.5vh;
+  justify-content: flex-end;
+  padding: 0 4vw 3vh 0;
   margin: 0;
   background: transparent !important;
-  pointer-events: none;
 }
 
 .shell {
   position: relative;
-  width: min(22.5rem, 38vh);
-  aspect-ratio: 2 / 3;
+  height: 62vh;
+  aspect-ratio: 698 / 1518;
   margin: 0;
   padding: 0;
-  border: 0;
-  background: transparent !important;
-  pointer-events: auto;
-  animation: rise 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--tracker-fg);
+  animation: rise 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.chassis {
+.body {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
-  background: transparent;
-  filter: drop-shadow(0 1.5rem 2.2rem var(--tracker-shadow));
-}
-
-.glass {
-  position: absolute;
-  left: 15.5%;
-  top: 7.2%;
-  width: 66%;
-  height: 56%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.4rem 0.55rem 0.1rem;
-  overflow: hidden;
-  background: transparent;
-  border-radius: 0.55rem;
-  min-width: 0;
-}
-
-.statusBlock {
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.16rem;
-  flex: 0 0 auto;
-  max-width: 100%;
-  margin-right: 0.15rem;
-  min-width: 0;
-}
-
-.statusLabel {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.32em;
-  color: var(--tracker-ink);
-  line-height: 1.35;
-}
-
-.gpsRow {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.28rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--tracker-ink);
-  line-height: 1.35;
-}
-
-.gpsLed {
-  width: 1.55rem;
-  height: 0.28rem;
-  border-radius: 1px;
-  background: var(--tracker-cyan);
-  box-shadow: 0 0.35rem 0.7rem var(--tracker-cyan-glow), 0 0 0.55rem var(--tracker-cyan-lamp);
-}
-
-.gpsBusy .gpsLed {
-  animation: pulse 900ms ease-in-out infinite;
-}
-
-.readout {
-  position: relative;
-  width: 92%;
-  margin-top: 0.45rem;
-  flex: 0 0 auto;
-  min-width: 0;
-  border-radius: 0.2rem;
-  transition: box-shadow 140ms ease;
-}
-
-.readout:focus-within {
-  box-shadow: 0 0 0 0.12rem var(--tracker-cyan-focus);
-}
-
-.numberInput {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  border: 0;
-  opacity: 0;
-  background: transparent;
-  color: transparent;
-  caret-color: transparent;
-}
-
-.numberInput:focus,
-.numberInput:focus-visible {
-  outline: none;
-}
-
-.error,
-.errorSlot {
-  min-height: 1.15rem;
-  margin: 0.08rem 0 0.15rem;
-  padding: 0 0.25rem;
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1.25;
-  color: transparent;
-  flex: 0 0 auto;
-  min-width: 0;
-  max-width: 100%;
-}
-
-.error {
-  color: var(--tracker-miss);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.keypad {
-  width: 52%;
-  flex: 0 0 auto;
-  margin-top: 0.15rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.3rem 0.36rem;
-  align-content: start;
-  justify-items: center;
-  background: transparent;
-  min-width: 0;
-}
-
-.keySpacer {
-  width: 1.45rem;
-  height: 1.45rem;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.key {
-  position: relative;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  width: 1.45rem;
-  height: 1.45rem;
-  margin: 0;
-  padding: 0.08em 0 0;
-  border-radius: 50%;
-  border: 1.5px solid var(--tracker-key-stroke);
-  background: transparent;
-  color: var(--tracker-ink);
-  font-family: inherit;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1;
-  text-align: center;
-  text-indent: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
-}
-
-.key::before {
-  content: '';
-  position: absolute;
-  inset: -0.4rem;
-}
-
-.key:hover:not(:disabled) {
-  background: var(--tracker-cyan-hover);
-  border-color: var(--tracker-cyan);
-  color: var(--tracker-cyan);
-}
-
-.key:active:not(:disabled) {
-  background: var(--tracker-cyan-press);
-}
-
-.key:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.key:focus-visible {
-  outline: 2px solid var(--tracker-cyan);
-  outline-offset: 2px;
-}
-
-.dial {
-  position: absolute;
-  left: 50%;
-  bottom: 14.1%;
-  width: max(13.9%, 2.75rem);
-  aspect-ratio: 1;
-  transform: translateX(-50%);
-  z-index: 3;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-
-.dial:hover:not(:disabled) {
-  box-shadow: 0 0 0 0.35rem var(--tracker-cyan-soft);
-}
-
-.dial:disabled {
-  cursor: default;
-}
-
-.dialCooldown {
-  box-shadow: 0 0 0 0.28rem var(--tracker-cyan-ghost);
-  opacity: 0.72;
-  cursor: default;
-}
-
-.dial:focus-visible {
-  outline: 2px solid var(--tracker-cyan);
-  outline-offset: 3px;
+  filter: drop-shadow(0 2vh 3vh var(--tracker-shadow));
 }
 
 .srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+.closeKey {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tracker-fg);
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.closeKey:hover:not(:disabled) {
+  background: var(--tracker-hover);
+  color: var(--tracker-fg);
+}
+
+.closeKey:disabled {
+  color: var(--tracker-disabled-fg);
+  cursor: default;
+}
+
+.closeIcon {
+  width: 52%;
+  height: 52%;
+}
+
+.screen {
+  --tone: var(--tracker-fg);
+  --dot: var(--tracker-muted-fg);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1.3vh 1.6vh 1.2vh;
+  border-radius: 1.9vh;
+  overflow: hidden;
+  color: var(--tracker-fg);
+  transition: box-shadow 200ms ease;
+}
+
+.gps {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7vh;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  font-size: 1.5vh;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tracker-muted-fg);
+}
+
+.gpsText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gpsDot {
+  flex: none;
+  width: 1vh;
+  height: 1vh;
+  border-radius: 50%;
+  background: var(--dot);
+  transition: background 200ms ease;
+}
+
+.screen[data-tone='busy'] .gpsDot {
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+.numberWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8vh;
+}
+
+.number {
+  display: flex;
+  align-items: baseline;
+  font-family: 'Cascadia Mono', 'Consolas', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 2.5vh;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--tracker-fg);
+}
+
+.digit {
+  display: inline-block;
+  width: 0.62em;
+  text-align: center;
+}
+
+.digit.grouped {
+  margin-right: 0.45em;
+}
+
+.ghost {
+  color: var(--tracker-muted-fg);
+}
+
+.numberInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  opacity: 0;
+}
+
+.status {
+  flex: 1;
+  min-height: 0;
+  margin: 1vh 0 0;
+  padding-top: 1vh;
+  border-top: 1px solid var(--tracker-border);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  font-size: 1.8vh;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tone);
+  text-wrap: balance;
+  transition: color 160ms ease;
+}
+
+.sweep {
+  position: absolute;
+  left: 1.6vh;
+  right: 1.6vh;
+  bottom: 1vh;
+  height: 0.35vh;
+  overflow: hidden;
+  border-radius: 0.2vh;
+  background: var(--tracker-border);
+}
+
+.sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 32%;
+  border-radius: inherit;
+  background: var(--tracker-fg);
+  animation: sweep 1000ms cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+}
+
+.key {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 1.3vh;
+  background: transparent;
+  color: var(--tracker-fg);
+  font: inherit;
+  font-size: 2.4vh;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.key:hover:not(:disabled) {
+  background: var(--tracker-hover);
+}
+
+.key:active:not(:disabled) {
+  background: var(--tracker-press);
+  transform: translateY(0.2vh);
+}
+
+.key:disabled {
+  color: var(--tracker-disabled-fg);
+  cursor: default;
+}
+
+.keyBusy {
+  pointer-events: none;
+}
+
+.keyIcon {
+  width: 2.6vh;
+  height: 2.6vh;
+}
+
+.track {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8vh;
+  margin: 0;
+  padding: 0 1vh;
+  border: 0;
+  border-radius: 1.2vh;
+  background: var(--tracker-primary);
+  color: var(--tracker-primary-fg);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.trackText {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: min(2vh, calc(36vh / var(--chars)));
+}
+
+.track:hover:not(:disabled) {
+  background: var(--tracker-primary-hover);
+}
+
+.track:disabled {
+  cursor: default;
+}
+
+.spinner {
+  flex: none;
+  width: 1.9vh;
+  height: 1.9vh;
+  border: 0.3vh solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+.shake {
+  animation: shake 240ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
 @keyframes rise {
   from {
-    opacity: 0.35;
-    transform: translateY(1.4rem);
+    opacity: 0;
+    transform: translateY(2.5vh);
   }
   to {
     opacity: 1;
@@ -288,51 +302,45 @@
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
+@keyframes shake {
+  20% {
+    transform: translateX(-0.6vh);
   }
+  45% {
+    transform: translateX(0.5vh);
+  }
+  70% {
+    transform: translateX(-0.3vh);
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(212%);
+  }
+}
+
+@keyframes pulse {
   50% {
     opacity: 0.35;
   }
 }
 
-@media (pointer: coarse) {
-  .key,
-  .keySpacer {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .key::before {
-    inset: -0.2rem;
-  }
-
-  .dial {
-    width: max(15%, 2.75rem);
-    bottom: 13.8%;
-    left: 50%;
-  }
-
-  .keypad {
-    width: 62%;
-    gap: 0.36rem 0.4rem;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shell {
+  .shell,
+  .shake,
+  .spinner,
+  .sweep::after,
+  .screen[data-tone='busy'] .gpsDot {
     animation: none;
-  }
-
-  .gpsBusy .gpsLed {
-    animation: none;
-    opacity: 0.4;
-  }
-
-  .readout,
-  .key {
-    transition: none;
   }
 }

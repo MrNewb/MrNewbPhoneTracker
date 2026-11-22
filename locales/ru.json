@@ -6,7 +6,15 @@
         "Number": "Номер телефона",
         "Empty": "Введите номер",
         "Cooldown": "Ждите {{time}}с",
-        "NoItem": "Нужен трекер"
+        "NoItem": "Нужен трекер",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Вы не знаете, как этим пользоваться.",

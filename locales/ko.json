@@ -6,7 +6,15 @@
         "Number": "전화번호",
         "Empty": "번호 입력",
         "Cooldown": "{{time}}초 대기",
-        "NoItem": "트래커 필요"
+        "NoItem": "트래커 필요",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "사용 방법을 모릅니다.",

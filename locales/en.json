@@ -6,11 +6,19 @@
         "Number": "Phone number",
         "Empty": "Enter a number",
         "Cooldown": "Wait {{time}}s",
-        "NoItem": "Tracker required"
+        "NoItem": "Tracker required",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "You don't know how to use this.",
-        "Unabletolocate": "Cant find that phone.",
+        "Unabletolocate": "Can't find that phone.",
         "NoItem": "You need a tracker to do that.",
         "Cooldown": "Tracker cooling down."
     },

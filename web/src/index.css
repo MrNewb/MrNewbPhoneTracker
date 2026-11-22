@@ -1,17 +1,29 @@
+/* shadcn/ui dark palette (zinc base). Only these tokens are used by the device. */
 :root {
-  --tracker-cyan: #5ee7ff;
-  --tracker-cyan-glow: rgba(0, 229, 255, 0.28);
-  --tracker-cyan-lamp: rgba(94, 231, 255, 0.9);
-  --tracker-cyan-soft: rgba(94, 231, 255, 0.18);
-  --tracker-cyan-hover: rgba(94, 231, 255, 0.08);
-  --tracker-cyan-press: rgba(94, 231, 255, 0.16);
-  --tracker-cyan-ghost: rgba(94, 231, 255, 0.12);
-  --tracker-cyan-focus: rgba(94, 231, 255, 0.35);
-  --tracker-ink: #f4f7f8;
-  --tracker-key-stroke: rgba(244, 247, 248, 0.78);
-  --tracker-miss: #ff6b6b;
-  --tracker-selection: rgba(0, 229, 255, 0.35);
-  --tracker-shadow: rgba(0, 0, 0, 0.58);
+  --tracker-body: #18181b;
+  --tracker-bezel: #3f3f46;
+  --tracker-screen: #09090b;
+  --tracker-border: #27272a;
+  --tracker-fg: #fafafa;
+  --tracker-muted-fg: #a1a1aa;
+  --tracker-faint: #52525b;
+  --tracker-disabled-fg: #71717a;
+  --tracker-key: #27272a;
+  --tracker-key-hover: #3f3f46;
+  --tracker-key-press: #52525b;
+  --tracker-key-off: #1f1f23;
+  --tracker-primary: #2563eb;
+  --tracker-primary-hover: #1d4ed8;
+  --tracker-primary-fg: #ffffff;
+  --tracker-success: #34d399;
+  --tracker-success-bg: #065f46;
+  --tracker-success-fg: #ecfdf5;
+  --tracker-warning: #fbbf24;
+  --tracker-danger: #f87171;
+  --tracker-hover: rgba(250, 250, 250, 0.1);
+  --tracker-press: rgba(250, 250, 250, 0.18);
+  --tracker-selection: rgba(37, 99, 235, 0.4);
+  --tracker-shadow: rgba(0, 0, 0, 0.55);
 }
 
 *,
@@ -27,18 +39,14 @@ body,
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Barlow Condensed', 'Segoe UI', sans-serif;
-  color: var(--tracker-ink);
+  color: var(--tracker-fg);
   user-select: none;
+  cursor: default;
 }
 
 ::selection {
   background: var(--tracker-selection);
-  color: var(--tracker-ink);
-}
-
-input {
-  caret-color: var(--tracker-cyan);
+  color: var(--tracker-fg);
 }
 
 button,
@@ -54,10 +62,4 @@ button {
 button:focus,
 input:focus {
   outline: none;
-}
-
-button:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--tracker-cyan);
-  outline-offset: 3px;
 }

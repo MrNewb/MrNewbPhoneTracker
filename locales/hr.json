@@ -6,7 +6,15 @@
         "Number": "Broj telefona",
         "Empty": "Unesi broj",
         "Cooldown": "Pričekaj {{time}}s",
-        "NoItem": "Potreban tracker"
+        "NoItem": "Potreban tracker",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Ne znaš kako ovo koristiti.",

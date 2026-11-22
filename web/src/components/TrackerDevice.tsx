@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useId, useRef, useState, type FormEvent, type KeyboardEvent } from 'react'
-import { SevenSegmentReadout, phoneNumberMaxLength } from './SevenSegmentReadout'
-import chassisUrl from '../assets/tracker-chassis.webp'
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type FormEvent, type KeyboardEvent, type MouseEvent } from 'react'
+import deviceUrl from '../assets/tracker-device.webp'
+import { DEVICE_ASPECT, barRegion, closeRegion, keyRegions, screenRegion, type Region } from './deviceRegions'
 import { fetchNui } from '../utils/fetchNui'
 import styles from './TrackerDevice.module.css'
 
@@ -13,18 +13,44 @@ export type TrackerLabels = {
   miss: string
   cooldown: string
   noItem: string
+  ready: string
+  searching: string
+  locked: string
+  hint: string
+  close: string
+  backspace: string
+  clear: string
 }
 
-const keypadLayout = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', ''] as const
+const barPlate: Region = { x: barRegion.x + 0.014, y: barRegion.y + 0.007, w: barRegion.w - 0.028, h: barRegion.h - 0.014 }
+
+function region(r: Region): CSSProperties {
+  return { left: `${r.x * 100}%`, top: `${r.y * 100}%`, width: `${r.w * 100}%`, height: `${r.h * 100}%` }
+}
+
+type KeyAction = { kind: 'digit'; value: string } | { kind: 'backspace' } | { kind: 'clear' }
+
+const keypadLayout: KeyAction[] = [
+  ...['1', '2', '3', '4', '5', '6', '7', '8', '9'].map((value) => ({ kind: 'digit', value }) as KeyAction),
+  { kind: 'backspace' },
+  { kind: 'digit', value: '0' },
+  { kind: 'clear' },
+]
+
+const PHONE_NUMBER_MAX_LENGTH = 10
+// 3-3-4: a wider gap after the third and sixth digit keeps the number scannable
+const GROUP_AFTER = [2, 5]
+const MIN_SEARCH_MS = 400
+const LOCKED_HOLD_MS = 1100
 
 // Module-level so closing the device does not reset the cooldown.
 let submitCooldownUntilMs = 0
 
 function sanitizePhoneNumber(value: string) {
-  return value.replace(/\D/g, '').slice(0, phoneNumberMaxLength)
+  return value.replace(/\D/g, '').slice(0, PHONE_NUMBER_MAX_LENGTH)
 }
 
-function formatCooldownLabel(template: string, seconds: number) {
+function formatTime(template: string, seconds: number) {
   return template.replace(/\{\{\s*time\s*\}\}/g, String(seconds))
 }
 
@@ -38,7 +64,47 @@ function armSubmitCooldown(seconds: number) {
   submitCooldownUntilMs = Math.max(submitCooldownUntilMs, Date.now() + wait * 1000)
 }
 
+function pause(ms: number) {
+  return new Promise<void>((resolve) => window.setTimeout(resolve, ms))
+}
+
 type PingResult = { ok: boolean; reason?: string; wait?: number }
+type Failure = '' | 'empty' | 'noitem' | 'miss' | 'cooldown'
+type Phase = 'idle' | 'pinging' | 'locked'
+type Tone = 'hint' | 'ready' | 'busy' | 'wait' | 'miss' | 'locked'
+
+function BackspaceIcon() {
+  return (
+    <svg className={styles.keyIcon} viewBox="0 0 24 24" aria-hidden>
+      <path d="M9 5H20V19H9L3 12Z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M12.5 9.5L16.5 14.5M16.5 9.5L12.5 14.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg className={styles.closeIcon} viewBox="0 0 24 24" aria-hidden>
+      <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function NumberReadout({ value }: { value: string }) {
+  const slots = Array.from({ length: PHONE_NUMBER_MAX_LENGTH }, (_, index) => value[index])
+  return (
+    <div className={styles.number} aria-hidden>
+      {slots.map((digit, index) => (
+        <span
+          key={index}
+          className={`${styles.digit} ${digit === undefined ? styles.ghost : ''} ${GROUP_AFTER.includes(index) ? styles.grouped : ''}`}
+        >
+          {digit ?? '·'}
+        </span>
+      ))}
+    </div>
+  )
+}
 
 export function TrackerDevice({
   labels,
@@ -50,10 +116,11 @@ export function TrackerDevice({
   onClose: () => void
 }) {
   const inputRef = useRef<HTMLInputElement>(null)
-  const errorId = useId()
+  const statusId = useId()
   const [phoneNumber, setPhoneNumber] = useState('')
-  const [pinging, setPinging] = useState(false)
-  const [error, setError] = useState('')
+  const [phase, setPhase] = useState<Phase>('idle')
+  const [failure, setFailure] = useState<Failure>('')
+  const [missCount, setMissCount] = useState(0)
   const [cooldownLeft, setCooldownLeft] = useState(() => getCooldownRemainingSeconds())
 
   const refreshCooldown = useCallback(() => {
@@ -73,70 +140,70 @@ export function TrackerDevice({
       if (remaining <= 0) window.clearInterval(timer)
     }, 250)
     return () => window.clearInterval(timer)
-  }, [refreshCooldown])
+  }, [refreshCooldown, phase])
 
-  const submitLocked = pinging || cooldownLeft > 0
+  const busy = phase !== 'idle'
+  const submitLocked = busy || cooldownLeft > 0
 
-  function appendDigit(value: string) {
-    if (pinging || value === '') return
-    setError('')
-    setPhoneNumber((current) => sanitizePhoneNumber(current + value))
+  function editNumber(next: (current: string) => string) {
+    if (phase !== 'idle') return
+    setFailure('')
+    setPhoneNumber((current) => sanitizePhoneNumber(next(current)))
     inputRef.current?.focus()
   }
 
-  function handleChange(value: string) {
-    setError('')
-    setPhoneNumber(sanitizePhoneNumber(value))
+  function handleKey(action: KeyAction) {
+    if (action.kind === 'digit') editNumber((current) => current + action.value)
+    else if (action.kind === 'backspace') editNumber((current) => current.slice(0, -1))
+    else editNumber(() => '')
   }
 
   async function pingNumber() {
-    if (submitLocked) {
-      if (cooldownLeft > 0) {
-        setError(formatCooldownLabel(labels.cooldown, cooldownLeft))
-      }
-      return
-    }
+    if (submitLocked) return
 
     const digits = sanitizePhoneNumber(phoneNumber)
     if (!digits) {
-      setError(labels.empty)
+      setFailure('empty')
+      setMissCount((count) => count + 1)
       return
     }
 
-    setPinging(true)
-    setError('')
+    setPhase('pinging')
+    setFailure('')
+    let result: PingResult = { ok: false, reason: 'miss' }
     try {
-      const result = await fetchNui<PingResult>(
-        'TRACKER_PING',
-        { phoneNumber: digits },
-        { ok: digits === '5550147', wait: cooldownSeconds },
-      )
-
-      const waitSeconds = typeof result.wait === 'number' ? result.wait : cooldownSeconds
-      if (result.ok || result.reason === 'miss' || result.reason === 'cooldown') {
-        armSubmitCooldown(waitSeconds)
-        refreshCooldown()
-      }
-
-      if (result.ok) {
-        onClose()
-        return
-      }
-
-      if (result.reason === 'empty') {
-        setError(labels.empty)
-      } else if (result.reason === 'noitem') {
-        setError(labels.noItem)
-      } else if (result.reason === 'cooldown') {
-        setError(formatCooldownLabel(labels.cooldown, getCooldownRemainingSeconds() || waitSeconds))
-      } else {
-        setError(labels.miss)
-      }
+      const [response] = await Promise.all([
+        fetchNui<PingResult>(
+          'TRACKER_PING',
+          { phoneNumber: digits },
+          digits === '5550147' ? { ok: true, wait: cooldownSeconds } : { ok: false, reason: 'miss', wait: cooldownSeconds },
+        ),
+        pause(MIN_SEARCH_MS),
+      ])
+      result = response
     } catch {
-      setError(labels.miss)
-    } finally {
-      setPinging(false)
+      result = { ok: false, reason: 'miss' }
     }
+
+    const waitSeconds = typeof result.wait === 'number' ? result.wait : cooldownSeconds
+    if (result.ok || result.reason === 'miss' || result.reason === 'cooldown') {
+      armSubmitCooldown(waitSeconds)
+      refreshCooldown()
+    }
+
+    if (result.ok) {
+      setPhase('locked')
+      await pause(LOCKED_HOLD_MS)
+      onClose()
+      return
+    }
+
+    if (result.reason === 'empty') setFailure('empty')
+    else if (result.reason === 'noitem') setFailure('noitem')
+    else if (result.reason === 'cooldown') setFailure('cooldown')
+    else setFailure('miss')
+    setMissCount((count) => count + 1)
+    setPhase('idle')
     inputRef.current?.focus()
   }
 
@@ -156,80 +223,119 @@ export function TrackerDevice({
     }
   }
 
-  const statusMessage =
-    error || (cooldownLeft > 0 ? formatCooldownLabel(labels.cooldown, cooldownLeft) : '')
+  function onStageClick(event: MouseEvent<HTMLDivElement>) {
+    if (event.target === event.currentTarget && phase !== 'locked') onClose()
+  }
+
+  let tone: Tone = 'hint'
+  let statusText = labels.hint
+  if (phase === 'locked') {
+    tone = 'locked'
+    statusText = labels.locked
+  } else if (phase === 'pinging') {
+    tone = 'busy'
+    statusText = labels.searching
+  } else if (failure === 'noitem') {
+    tone = 'miss'
+    statusText = labels.noItem
+  } else if (failure === 'empty') {
+    tone = 'miss'
+    statusText = labels.empty
+  } else if (failure === 'miss') {
+    tone = 'miss'
+    statusText = labels.miss
+  } else if (phoneNumber.length > 0 && cooldownLeft === 0) {
+    tone = 'ready'
+    statusText = labels.ready
+  }
+
+  let trackText = labels.ping
+  if (phase === 'locked') trackText = labels.locked
+  else if (phase === 'pinging') trackText = labels.searching
+  else if (cooldownLeft > 0) trackText = formatTime(labels.cooldown, cooldownLeft)
+
+  const screenStyle = region(screenRegion)
 
   return (
-    <div className={styles.stage}>
+    <div className={styles.stage} onClick={onStageClick}>
       <form className={styles.shell} onSubmit={onSubmit}>
-        <img className={styles.chassis} src={chassisUrl} alt="" draggable={false} />
+        <img className={styles.body} src={deviceUrl} alt="" draggable={false} />
+        <h1 className={styles.srOnly}>MrNewbTracker</h1>
 
-        <div className={styles.glass}>
-          <div className={styles.statusBlock}>
-            <p className={styles.statusLabel}>{labels.status}</p>
-            <p className={`${styles.gpsRow} ${pinging ? styles.gpsBusy : ''}`}>
-              <span className={styles.gpsLed} aria-hidden />
-              <span>{labels.gps}</span>
-            </p>
-          </div>
+        <button
+          type="button"
+          className={styles.closeKey}
+          style={{
+            left: `${(closeRegion.cx - closeRegion.d / 2) * 100}%`,
+            top: `${(closeRegion.cy - (closeRegion.d * DEVICE_ASPECT) / 2) * 100}%`,
+            width: `${closeRegion.d * 100}%`,
+            aspectRatio: '1',
+          }}
+          onClick={onClose}
+          disabled={phase === 'locked'}
+          aria-label={labels.close}
+        >
+          <CloseIcon />
+        </button>
 
-          <label className={styles.readout}>
-            <span className={styles.srOnly}>{labels.number}</span>
-            <SevenSegmentReadout value={phoneNumber} />
-            <input
-              ref={inputRef}
-              className={styles.numberInput}
-              value={phoneNumber}
-              onChange={(event) => handleChange(event.target.value)}
-              onKeyDown={onKeyDown}
-              inputMode="numeric"
-              pattern="[0-9]*"
-              autoComplete="off"
-              spellCheck={false}
-              maxLength={phoneNumberMaxLength}
-              disabled={pinging}
-              aria-invalid={Boolean(error)}
-              aria-describedby={statusMessage ? errorId : undefined}
-            />
-          </label>
-
-          <p
-            id={errorId}
-            className={statusMessage ? styles.error : styles.errorSlot}
-            role="status"
-            aria-live="polite"
-          >
-            {statusMessage}
+        <section className={styles.screen} style={screenStyle} data-tone={tone} aria-label={labels.number}>
+          <p className={styles.gps}>
+            <span className={styles.gpsDot} aria-hidden />
+            <span className={styles.gpsText}>{labels.gps}</span>
           </p>
-
-          <div className={styles.keypad}>
-            {keypadLayout.map((key, index) =>
-              key === '' ? (
-                <span key={`spacer-${index}`} className={styles.keySpacer} aria-hidden />
-              ) : (
-                <button
-                  key={key}
-                  type="button"
-                  className={styles.key}
-                  disabled={pinging || phoneNumber.length >= phoneNumberMaxLength}
-                  onClick={() => appendDigit(key)}
-                >
-                  {key}
-                </button>
-              ),
-            )}
+          <div key={missCount} className={`${styles.numberWrap} ${missCount > 0 && tone === 'miss' ? styles.shake : ''}`}>
+            <NumberReadout value={phoneNumber} />
           </div>
-        </div>
+          <input
+            ref={inputRef}
+            className={styles.numberInput}
+            value={phoneNumber}
+            onChange={(event) => editNumber(() => event.target.value)}
+            onKeyDown={onKeyDown}
+            inputMode="numeric"
+            pattern="[0-9]*"
+            autoComplete="off"
+            spellCheck={false}
+            maxLength={PHONE_NUMBER_MAX_LENGTH}
+            disabled={busy}
+            aria-label={labels.number}
+            aria-describedby={statusId}
+          />
+          <p id={statusId} className={styles.status} role="status" aria-live="polite">
+            {statusText}
+          </p>
+          {phase === 'pinging' ? <span className={styles.sweep} aria-hidden /> : null}
+        </section>
+
+        {keypadLayout.map((action, index) => {
+          const key = action.kind === 'digit' ? action.value : action.kind
+          const atLimit = action.kind === 'digit' && phoneNumber.length >= PHONE_NUMBER_MAX_LENGTH
+          const nothingToEdit = action.kind !== 'digit' && phoneNumber.length === 0
+          return (
+            <button
+              key={key}
+              type="button"
+              className={`${styles.key} ${busy ? styles.keyBusy : ''}`}
+              style={region(keyRegions[index])}
+              disabled={atLimit || nothingToEdit}
+              onClick={() => handleKey(action)}
+              aria-label={action.kind === 'backspace' ? labels.backspace : action.kind === 'clear' ? labels.clear : undefined}
+            >
+              {action.kind === 'digit' ? action.value : action.kind === 'backspace' ? <BackspaceIcon /> : 'C'}
+            </button>
+          )
+        })}
 
         <button
           type="submit"
-          className={`${styles.dial} ${cooldownLeft > 0 ? styles.dialCooldown : ''}`}
-          disabled={submitLocked}
-          aria-label={
-            cooldownLeft > 0 ? formatCooldownLabel(labels.cooldown, cooldownLeft) : labels.ping
-          }
-          aria-busy={pinging}
-        />
+          className={styles.track}
+          style={{ ...region(barPlate), '--chars': Math.max(trackText.length, 8) } as CSSProperties}
+          disabled={submitLocked || phoneNumber.length === 0}
+          aria-busy={phase === 'pinging'}
+        >
+          {phase === 'pinging' ? <span className={styles.spinner} aria-hidden /> : null}
+          <span className={styles.trackText}>{trackText}</span>
+        </button>
       </form>
     </div>
   )

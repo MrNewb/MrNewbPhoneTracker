@@ -6,7 +6,15 @@
         "Number": "电话号码",
         "Empty": "输入号码",
         "Cooldown": "等待 {{time}}秒",
-        "NoItem": "需要追踪器"
+        "NoItem": "需要追踪器",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "你不知道怎么用这个。",

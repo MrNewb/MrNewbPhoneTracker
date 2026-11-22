@@ -6,7 +6,15 @@
         "Number": "Numéro de téléphone",
         "Empty": "Entrez un numéro",
         "Cooldown": "Attendez {{time}}s",
-        "NoItem": "Traceur requis"
+        "NoItem": "Traceur requis",
+        "Ready": "READY",
+        "Searching": "SEARCHING",
+        "Locked": "LOCKED",
+        "Hint": "Enter a number, then press Track",
+        "Miss": "No phone found",
+        "Close": "Close",
+        "Backspace": "Delete",
+        "Clear": "Clear"
     },
     "Restricted": {
         "JobLocked": "Vous ne savez pas utiliser ceci.",

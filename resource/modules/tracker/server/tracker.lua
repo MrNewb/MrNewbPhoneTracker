@@ -53,7 +53,6 @@ local findSourceByPhoneResource = {
 local function findPlayerByPhoneNumber(phoneNumber)
     if type(phoneNumber) ~= 'string' or phoneNumber == '' or not startedPhoneResource then return false end
     local findSource = findSourceByPhoneResource[startedPhoneResource]
-    if type(findSource) ~= 'function' then return false end
 
     local targetSource = tonumber(findSource(phoneNumber))
     if not targetSource or targetSource < 1 then return false end
@@ -66,18 +65,17 @@ end
 local function hasRequiredJob(src)
     local requiredJob = Config.RequiredJob
     if type(requiredJob) == 'string' then return bridge.framework.hasJob(src, requiredJob) == true end
-    if type(requiredJob) ~= 'table' then return false end
 
     if requiredJob[1] then
         for index = 1, #requiredJob do
             local jobName = requiredJob[index]
-            if type(jobName) == 'string' and bridge.framework.hasJob(src, jobName) then return true end
+            if bridge.framework.hasJob(src, jobName) then return true end
         end
         return false
     end
 
     for jobName, minimumGrade in pairs(requiredJob) do
-        if type(jobName) == 'string' and bridge.framework.hasJob(src, jobName, tonumber(minimumGrade) or 0) then
+        if bridge.framework.hasJob(src, jobName, tonumber(minimumGrade) or 0) then
             return true
         end
     end
@@ -105,11 +103,7 @@ lib.callback.register('MrNewbPhoneTracker:Callback:PingNumber', function(src, ph
     if not hasRequiredJob(src) then
         return { ok = false, reason = 'miss' }
     end
-    if type(Config.TrackerItem) ~= 'string' or Config.TrackerItem == '' then
-        return { ok = false, reason = 'miss' }
-    end
     if not bridge.inventory.hasItem(src, Config.TrackerItem, 1) then
-        bridge.notifications.notify(src, { description = locale('Restricted.NoItem'), type = 'error' })
         return { ok = false, reason = 'noitem' }
     end
 
@@ -126,7 +120,6 @@ lib.callback.register('MrNewbPhoneTracker:Callback:PingNumber', function(src, ph
         if remaining < 0 then remaining = 0 end
     end
     if remaining > 0 then
-        bridge.notifications.notify(src, { description = locale('Restricted.Cooldown'), type = 'error' })
         return { ok = false, reason = 'cooldown', wait = remaining }
     end
 
@@ -134,29 +127,20 @@ lib.callback.register('MrNewbPhoneTracker:Callback:PingNumber', function(src, ph
 
     local targetSource = findPlayerByPhoneNumber(sanitizedNumber)
     if not targetSource then
-        bridge.notifications.notify(src, { description = locale('Restricted.Unabletolocate'), type = 'error' })
         return { ok = false, reason = 'miss', wait = cooldownSeconds }
     end
 
     local targetPed = GetPlayerPed(targetSource)
     if targetPed == 0 or not DoesEntityExist(targetPed) then
-        bridge.notifications.notify(src, { description = locale('Restricted.Unabletolocate'), type = 'error' })
         return { ok = false, reason = 'miss', wait = cooldownSeconds }
     end
 
     local coords = GetEntityCoords(targetPed)
-    local x = coords and coords.x
-    local y = coords and coords.y
-    local z = coords and coords.z
-    if type(x) ~= 'number' or type(y) ~= 'number' or type(z) ~= 'number' then
-        bridge.notifications.notify(src, { description = locale('Restricted.Unabletolocate'), type = 'error' })
-        return { ok = false, reason = 'miss', wait = cooldownSeconds }
-    end
 
     if Config.Utility.Debug then
         print(('[MrNewbPhoneTracker] Player %s pinged phone %s'):format(src, sanitizedNumber))
     end
-    return { ok = true, coords = { x = x, y = y, z = z }, wait = cooldownSeconds }
+    return { ok = true, coords = { x = coords.x, y = coords.y, z = coords.z }, wait = cooldownSeconds }
 end)
 
 bridge.framework.registerItemUse(Config.TrackerItem, function(src)
@@ -168,13 +152,11 @@ bridge.framework.registerItemUse(Config.TrackerItem, function(src)
         return
     end
 
-    if type(Config.TrackerItem) ~= 'string' or Config.TrackerItem == '' then return end
     if not bridge.inventory.hasItem(src, Config.TrackerItem, 1) then
-        bridge.notifications.notify(src, { description = locale('Restricted.NoItem'), type = 'error' })
         return
     end
 
-    TriggerClientEvent('MrNewbPhoneTracker:Client:OpenTracker', src)
+    TriggerClientEvent('MrNewbPhoneTracker:client:usedTracker', src)
 end)
 
 AddEventHandler('playerDropped', function()
@@ -182,7 +164,7 @@ AddEventHandler('playerDropped', function()
 end)
 
 AddEventHandler('onResourceStart', function(resourceName)
-    if resourceName ~= GetCurrentResourceName() then return end
+    if resourceName ~= cache.resource then return end
 
     exports[bridge.name]:VersionCheck('MrNewb/patchnotes', resourceName)
 
