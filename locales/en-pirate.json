@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Enter a number, then hit Track",
+        "Miss": "No phone, arr",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"
@@ -23,7 +23,7 @@
         "Cooldown": "Tracker be coolin down."
     },
     "Dispatch": {
-        "Message": "Phone tracked.",
+        "Message": "Phone found.",
         "Code": "10-80",
         "Icon": "fa-solid fa-square-phone"
     }

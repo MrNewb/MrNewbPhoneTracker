@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Βάλε έναν αριθμό και πάτησε Εντοπισμός",
+        "Miss": "Δεν βρέθηκε τηλέφωνο",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

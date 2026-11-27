@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "번호를 입력하고 추적을 누르세요",
+        "Miss": "휴대전화를 찾지 못했어요",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

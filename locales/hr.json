@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Unesi broj, zatim pritisni Prati",
+        "Miss": "Telefon nije pronađen",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

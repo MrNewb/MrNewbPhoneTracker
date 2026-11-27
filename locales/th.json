@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "กรอกหมายเลข แล้วกดติดตาม",
+        "Miss": "ไม่พบโทรศัพท์",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "输入号码，然后点击追踪",
+        "Miss": "未找到手机",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

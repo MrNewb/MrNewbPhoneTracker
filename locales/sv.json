@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Ange ett nummer och tryck sedan på Spåra",
+        "Miss": "Ingen telefon hittades",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

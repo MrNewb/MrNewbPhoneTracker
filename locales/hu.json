@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Adj meg egy számot, majd nyomd meg a Követés gombot",
+        "Miss": "Nem található telefon",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

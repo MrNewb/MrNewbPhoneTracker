@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Voer 'n nommer in en druk dan Spoor op",
+        "Miss": "Geen foon gevind",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"

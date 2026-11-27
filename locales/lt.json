@@ -1,0 +1,30 @@
+{
+    "Device": {
+        "Status": "BŪSENA",
+        "Gps": "GPS",
+        "Ping": "Sekti",
+        "Number": "Telefono numeris",
+        "Empty": "Įvesk numerį",
+        "Cooldown": "Palauk {{time}}s",
+        "NoItem": "Reikia sekiklio",
+        "Ready": "PARUOŠTA",
+        "Searching": "IEŠKOMA",
+        "Locked": "UŽFIKSUOTA",
+        "Hint": "Įvesk numerį ir spausk Sekti",
+        "Miss": "Telefonas nerastas",
+        "Close": "Uždaryti",
+        "Backspace": "Ištrinti",
+        "Clear": "Išvalyti"
+    },
+    "Restricted": {
+        "JobLocked": "Nemoki tuo naudotis.",
+        "Unabletolocate": "Nepavyksta rasti to telefono.",
+        "NoItem": "Tam tau reikia sekiklio.",
+        "Cooldown": "Sekiklis vėsta."
+    },
+    "Dispatch": {
+        "Message": "Telefonas susektas.",
+        "Code": "10-80",
+        "Icon": "fa-solid fa-square-phone"
+    }
+}

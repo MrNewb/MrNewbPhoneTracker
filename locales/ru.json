@@ -10,8 +10,8 @@
         "Ready": "READY",
         "Searching": "SEARCHING",
         "Locked": "LOCKED",
-        "Hint": "Enter a number, then press Track",
-        "Miss": "No phone found",
+        "Hint": "Введи номер и нажми «Отследить»",
+        "Miss": "Телефон не найден",
         "Close": "Close",
         "Backspace": "Delete",
         "Clear": "Clear"
